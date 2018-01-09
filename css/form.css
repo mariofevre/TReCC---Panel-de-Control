@@ -1,0 +1,386 @@
+
+#formcent h4{
+	margin-bottom:0px;
+}
+
+#formcent label{
+	margin-left:3px;
+	margin-right:3px;
+	margin-top:10px;
+	text-align:left;
+	display: inline-block;
+}
+#inputfecha{
+	display:inline-block;
+}
+#formcent label{
+	width:140px;
+	text-align:right;
+}
+#formcent label.chica{
+	width:90px;
+}		
+#formcent label.grande{
+	width:190px;
+	text-align:left;
+}
+#formcent input.mes,#formcent input.dia{
+	width:18px;
+	position:relative;
+	top:0px;
+	background-color:#fff;
+	text-align:center;
+}
+#formcent input.ano{
+	width:35px;
+	position:relative;
+	height:auto;
+	top:0px;
+	background-color:#fff;			
+}		
+#formcent input[disabled]{
+	color:#444;
+	background-color:silver;
+}
+#formcent{
+	display:none;
+	position:fixed;
+    top: 50%;
+    left: 50%;
+    width:80vw;
+    min-height:60vh;
+    max-height: 75vh;
+    margin-top: -30vh; 
+    margin-left: -40vw;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    z-index:5000;
+    border: 4px solid #000;
+    box-shadow: 10px 10px 15px rgba(0,0,0,0.5);
+    font-size:12px;
+    overflow: auto;
+    background-color: lightblue;
+}	
+
+#formcent #representacion{
+	display:none;
+}		
+#formcent textarea{
+	width:100%;
+}	
+
+#formcent #comunicaciones > div{
+	display:inline-block;
+	width:170px;
+}
+
+#formcent span{
+	display:inline-block;
+	vertical-align: text-bottom;
+}
+
+#formcent p >a{
+	display:inline-block;
+	width:100px;
+	margin:3px;
+	background-color:#08afd9;
+	color:#000;
+	font-size:14px;
+	border:1px solid #000;
+	text-align:center;
+	height:18px;
+	vertical-align:bottom;
+}
+#formcent p >a.eliminar{
+    background-color: #fa5858;
+    color: #000;
+    font-weight: bold;
+}
+#formcent p >a.cancelar{
+    background-color: #bbb;
+    color: #000;
+}
+  
+form#general >p >a:hover{
+	background-color:#fff;
+}
+
+#op_comunicaciones {
+	display: inline-block;
+    width: 840px;
+    height:400px;
+    overflow:hidden;
+}
+
+
+#op_comunicaciones > div > div{
+	background-color:#fff;
+	padding-left:1px;
+}
+
+#op_comunicaciones a{
+	display: inline-block;
+    height: 13px;
+    overflow: visible;
+    max-width: 120px;
+    min-width: 91px;
+}
+
+#op_comunicacionesCambia > div > div{
+	background-color:#fff;
+	padding-left:1px;
+}
+
+#op_comunicacionesCambia a{
+	display: inline-block;
+    height: 13px;
+    overflow: visible;
+    max-width: 120px;
+    min-width: 91px;
+}
+
+
+
+#formcent #sentido div{
+	display:inline-block;
+	border:1px solid #000;
+	width:200px;
+	height:150px;
+	overflow-y:scroll;
+	position:relative;
+}
+#formcent #contrasentido div{
+	display:inline-block;
+	border:1px solid #000;
+	width:200px;
+	height:150px;
+	overflow-y:scroll;
+	position:relative;
+}
+
+#formcent #op_comunicacionesCambia > label{
+	margin:0;
+	width:400px;
+	text-align:left;
+}
+#formcent #op_comunicacionesCambia > div > div > label{
+	position:absolute;
+	top:0px;
+	left:0px;
+	margin:0;
+	width:100%;
+	text-align:right;
+	opacity:0.8;
+}
+
+#formcent #op_comunicaciones > label{
+	margin:0;
+	width:400px;
+	text-align:left;
+}
+#formcent #op_comunicaciones > div > div > label{
+	position:absolute;
+	top:0px;
+	left:0px;
+	margin:0;
+	width:100%;
+	text-align:right;
+	opacity:0.8;
+}
+#formcent #comunicacionesCambia{
+	display:inline-block;	
+	width:600px;	
+	vertical-align: top;
+    position: absolute;
+    left: 300px;
+    top: 50px;
+}
+
+#formcent #comunicacionesCmabia a{
+    margin-left:5px;
+}
+
+#formcent #comunicaciones{
+	display:inline-block;	
+	width:300px;	
+	vertical-align: top;
+}
+
+#formcent #comunicaciones a{
+	
+    margin-left:5px;
+}
+#formcent .muestra{
+	display:inline-block;
+	width:100px;
+	height:14px;
+	border:1px #000 solid;
+	background-color:lightblue;
+	/*background-color:#fff;*/
+	padding-left:1px;
+	
+}
+
+.contenido {
+    background-color: lightblue;
+    border: 1px solid #08afd9;
+    color: #000;
+    display: inline-block;
+    height: 10px;
+    margin: 0;
+    margin-right:1px;
+    overflow: hidden;
+    text-align: center;
+    width: 19px;
+    font-size:10px;
+}
+
+#formcent #archivos{
+	display:inline-block;
+	width:calc(80vw - 220px);	
+}
+#formcent #archivos > a{
+	border:1px solid #000;
+	margin:5px;
+	display:inline-block;	
+}
+
+#formcent .info{
+	border:1px solid #000;
+	margin:5px;
+	display:block;
+	position:absolute;
+	top:10px;
+	left:10px;
+	width:100px;
+	height:auto;
+	background-color:#fff;
+	z-index:21;
+}
+#formcent .info h3{
+	margin-top:2px;
+}
+
+#formcent a#info{
+	position:absolute;
+	top:20px;
+	left:20px;
+}
+
+#formcent .info {
+	position:absolute;
+	top:20px;
+	left:20px;
+}
+
+#formcent #cerrar{
+	position:absolute;
+	right:2px;
+	top:2px;
+}
+
+#formcent #elim{
+	position:absolute;
+	right:2px;
+	top:20px;
+}
+
+
+#formcent label.upload{
+	height: 18px;
+	position:absolute;
+	right:0px;
+	width: 170px;
+	display:inline-block;
+}
+
+span.upload{
+	color:gray;
+	padding:2px;
+	display:block;
+	position:absolute;
+	top:0px;
+	left:0px;
+	width:170px;
+	height:20px;
+	text-align: center;
+	vertical-align:middle;
+	border:1px solid #000;
+	margin:0px;
+}
+
+.uploadinput{		
+	display:block;
+	position:absolute;
+	top:0px;
+	left:0px;
+	opacity:0;
+	width:172px;
+	height:20px;
+	vertical-align:middle;
+	border:1px solid #000;
+	margin:1px;
+}
+
+.alerta{
+	border:3px solid red;
+	background-color:#fbb;
+	color:#000;
+	position:fixed;
+	height:30vh;
+	top:35vh;
+	width:30vw;
+	left:35vw;
+	z-index:1000000;
+	text-align:center;
+}
+.alerta a{
+	font-size:16px;
+	color:#000;
+	background-color:#fff;
+	border:1px solid #000;
+	margin: 5px;
+	display:inline-block;
+}
+
+#op_comunicacionesCambia{
+	position: absolute;
+    left: 300px;
+    top: 100px;
+}
+
+#dummy{
+	display:inline-block;
+}
+#listadeversiones >div > span{
+	display:inline-block;
+	height:15px;
+	overflow:hidden;
+	text-align:center;	
+}
+#listadeversiones #documento{
+	width:80px;
+	text-align:left;	
+}
+#listadeversiones #numero{
+	width:20px;	
+}
+#listadeversiones #fecha{
+	width:50px;	
+}
+#listadeversiones #pre{
+	width:10px;	
+}
+#listadeversiones #apr{
+	width:10px;	
+}
+#listadeversiones #rev{
+	width:10px;	
+}
+#listadeversiones #anu{
+	width:10px;	
+}
+#listadeversiones #overv{
+	width:80px;	
+	text-align:center;
+}

@@ -1,0 +1,55 @@
+
+.COMcomunicacion{
+	border: 1px solid;
+    border-radius: 4px;
+    color: #000;
+    display: inline-block;
+    font-family: inherit;
+    font-size: 12px;
+    padding: 0;
+    right: 10px;
+    text-align: center;
+    top: 0;
+    vertical-align: middle;
+    width: auto;	
+}
+
+.COMcomunicacion.secundaria{
+    border-radius: 4px;
+    color: #333;
+    display: inline-block;
+    font-family: inherit;
+    font-size: 10px;
+    padding: 0;
+    right: 10px;
+    text-align: center;
+    line-height:8px;
+    top: 0;
+    vertical-align: top;
+    width: auto;
+}
+
+.entrante{
+	background-color:#839EF8;
+	border-color:#272FB6;
+	
+}
+.entrante.cerrada{
+	 background-color: #e1e7fb;		
+	border-color:silver;	 
+}
+
+
+.saliente{	
+	background-color:#C1F270;	
+	border-color:#57A532
+}
+.saliente.cerrada{
+	background-color:#EAFBCE;
+	border-color:silver;	 	
+	
+}
+
+
+
+

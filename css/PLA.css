@@ -1,0 +1,723 @@
+	form, input{
+		margin:0;
+		font-size:10px;
+		display:inline-block;
+	}
+	
+	input{
+		width:50px;
+		vertical-align:bottom;
+	}
+	
+	input[type='file'],input[type='submit']{
+		width:10px;
+		height:15px;
+	}
+	
+	div.baseplano{
+		display:none;
+		position:relative;
+		margin-top:20px;
+	}
+	
+	
+	div.baseplano > .referencias{
+		display:block;
+		position:relative;
+		width:100%;
+		height:75px;
+		border-top:1px solid #000;
+	}
+	
+	div.baseplano > h2{
+		position:absolute;
+		top:-10px;
+		left:0px;
+		font-size:15px;
+	}
+	
+	h3{
+		margin-bottom:0px;
+		margin-top:8px;
+	}
+	ul{
+		margin:0px;
+	}
+	
+	#page {
+		font-size:11px;
+	}
+	#page > form{
+		display:inline;
+		margin:0;
+	}
+	
+	#columnaextensa, #columnalateral, h2{
+		margin:0px;
+	}
+	
+	.selector.activo{
+		color:red;
+	}
+	
+	.aux{
+		width:8px;
+		height:10px;
+		overflow:hidden;
+		border:1px solid #08AFD9;
+		cursor:pointer;
+		display:inline-block;
+		position:relative;
+		font-size:11px;
+	}
+	
+	.listado{
+		width:120px;
+		max-height:600px;
+		overflow-y:scroll;
+		border:1px solid #08AFD9;
+		background-color:#fff;
+		z-index:3;
+		position: absolute;
+	}
+	
+	.listado > span{
+		width:97px;
+		display:inline-block;
+		border-bottom:1px solid silver;
+		overflow:hidden;
+	}
+	
+	.listado > span:hover{
+		color:#08AFD9;
+	}
+	
+	.ano{
+		width:24px;
+	}
+	
+	.mes{
+		width:14px;
+	}
+	
+	.dia{
+		width:14px;
+	}
+	.titulos > div{
+		display:inline-block;
+		text-align:center;
+	}
+	
+	.grupo{
+		border-bottom:1px solid red;
+	}
+	
+	
+	#modeloformulariolocalizacion{
+		display:none;
+	}
+	
+	#localizaciones{
+		font-size:10px;
+	}
+	
+	
+	.fila{
+		border-bottom:1px solid gray;
+		position:relative;
+	} 
+	.fila.selecto{
+		background-color:red;
+	} 
+	
+	.fila > div, .fila > a{
+		display:inline-block;
+		height:30px;
+		vertical-align:top;
+	} 
+	
+	.fila .muestra{
+		width:40px;
+		border-left:1px solid #ddd;
+		border-right:1px solid #ddd;
+		cursor:help;
+		position:absolute;
+		top:0px;
+		right:10px;
+	} 
+	.fila div.muestra:hover{
+		border-left:1px solid #000;
+		border-right:1px solid #000;
+	} 
+	
+	.fila .muestra > img{
+		max-width:40px;
+		max-height:30px;
+	} 
+	
+	.fila .vinculos{
+		width:10px;
+		cursor:help;
+		position:absolute;
+		top:0px;
+		right:0px;
+	} 
+	.fila .vinculos > div{
+		display:inline-block;
+		background-color:#eee;
+		width:8px;
+		height:6px;
+		border:1px solid #08AFD9;
+		font-size:8px;
+		line-height:6px;
+		
+	} 
+	.fila .vinculos > div:hover{
+		border:1px solid #000;
+	} 
+	
+	.fila .muestra > img{
+		max-width:40px;
+		max-height:30px;
+	} 
+	
+	
+	.fila .fecha{
+		text-align:center;
+	} 
+	
+	.fila .fecha >div{
+		display:inline-block;
+		width:21px;
+	} 
+	
+	.fila .fecha{
+		width:21px;
+		line-height:10px;
+		float:left;
+	} 
+	
+	.fila .fecha .dia{
+		font-size:13px;
+	} 
+	
+	.fila .fecha .mes{
+		font-size:12px;
+	} 
+	
+	.fila .descripcion{
+		width:130px;
+		font-size:10px;	
+		height:23px;	
+	} 
+	
+	.fila .tipo{
+		width:100px;
+		height:10px;
+	} 
+	
+	.fila .nuevopunto{
+		width:13px;
+		height:10px;
+		line-height: 8px;
+		text-align:center;
+		background-color:#ddd;
+		margin-left:1px;
+	} 
+	
+	div.portapuntos{
+		display:block;
+		position:absolute;
+		z-index:2;
+		top:0px;
+		left:0px;
+	}
+	div.portapuntos > .locIm{
+		display:inline-block;
+		position:relative;
+		margin:2px; 0px;	
+		vertical-align: middle;
+	}
+	
+	.referencias{
+		font-size:11px;
+		vertical-align:middle;
+	}
+	.referencias > .columna{
+		width:180px;
+		margin-left:20px;
+		display:inline-block;
+		position:relative;
+	}
+	
+	.loc, .locIm{
+		border:2px solid #000;
+		border-radius:2px;
+		width:3px;
+		height:3px;
+		display:block;
+		position:absolute;
+		background-color:#ccc;
+	}
+	.loc{
+		cursor:move;	
+	}
+	
+	
+	
+	span.locIm:hover{
+		border-color:#000;
+	}
+	
+	.loc.preventiva, .locIm.preventiva{
+		background-color:#fff;
+		border-color:#fff;	
+	}
+	.loc.correctiva, .locIm.correctiva {
+		background-color:#000;
+		border-color:#000;	
+	}
+	.criticidad.correctiva{
+		background-color:#000;
+	}
+	.criticidad.preventiva{
+		background-color:#fff;
+	}
+	.loc.selecto, .locIm.selecto{
+		background-color:red;
+		border:2px solid red;	
+	} 
+	
+	
+	.loc > .criticidad, .locIm > .criticidad{
+		position:absolute;
+		top:-4px;
+		left:-4px;
+		width:5px;
+		height:5px;
+		border:3px solid #ccc;
+		border-radius:3px;
+		z-index:3;
+	}
+	.loc > .criticidad.bajo, .locIm > .criticidad.bajo{
+		border:3px solid #319037;
+	}
+	.loc > .criticidad.medio, .locIm > .criticidad.medio{
+		border:3px solid #E5CF0A;
+	}
+	.loc > .criticidad.alto, .locIm > .criticidad.alto{
+		border:3px solid #E5360A;
+	}
+	
+	td.criticidad.bajo{
+		background-color:#319037;
+	}
+	td.criticidad.medio{
+		background-color:#E5CF0A;
+	}
+	td.criticidad.alto{
+		background-color:#E5360A;
+	}
+	.criticidadhalo{
+	position:absolute;
+		top:-9px;
+		left:-9px;
+		width:19px;
+		height:19px;
+		border:1px dotted #000;
+		border-radius:5px;
+		background:transparent;	
+		z-index:1;
+	}
+	
+	.criticidadhalomascara{
+		position:absolute;
+		top:-8px;
+		left:-8px;
+		width:19px;
+		height:19px;
+		border:none;
+		border-radius:4px;
+		background-color:rgba(255,255,255,0.8);
+		z-index:2;
+	}
+
+	.loc > .halodos{
+		position:absolute;
+		top:-10px;
+		left:-10px;
+		width:17px;
+		height:17px;
+		border-radius:3px;
+		background:transparent;	
+		z-index:0;
+	}
+
+	.ficha{
+		display:block;
+		background-color:#fff;
+		border:1px solid #000;
+		width:650px;
+		height:500px;
+		font-size:12px;
+		position:relative;
+		margin-bottom:2px;
+	}
+
+	.ficha{
+		width:651px;
+		height:800px;
+		border:2px solid #000;
+	}
+	
+	.ficha .encabezado{
+		display:inline-block;
+		width:350px;
+		height:300px;
+		border-right:1px solid #000;
+		vertical-align:top;
+	}
+		
+	.ficha .encabezado .numero{
+		display:inline-block;
+		width:99px;
+		height:80px;
+		border-left:1px solid #000;
+		border-bottom:1px solid #000;		
+		vertical-align:top;
+		font-size:40px;
+		text-align:center;
+		
+	}	
+	.ficha .encabezado .numero .titulo{
+		font-size:10px;
+		margin-top:10px;
+		display: inline-block;
+	}	
+			
+	
+	.ficha .portafoto{
+		display:inline-block;
+		width:300px;
+		height:300px;
+		vertical-align:top;
+	}		
+	.ficha .categorias{
+		width:651px;
+		border-top:1px solid #000;
+	}	
+	.ficha .jerarquias{
+		width:250px;
+		display:inline-block;
+		border-bottom:1px solid #000;
+		height:80px;
+	}	
+	.ficha .n1{
+		height: 40px;
+		font-size:14px;
+		border-bottom:1px solid #000;
+		line-height: 13px;
+	}		
+	.ficha .titulo{
+		font-size:11px;
+	}		
+	.ficha .n2{
+		font-size:14px;
+		height: 40px;
+		line-height: 13px;
+		position:relative;
+		padding-right: 15px;
+	}		
+	
+	.ficha .color{
+		display:block;
+		position:absolute;
+		right:0px;
+		top:0px;
+		height:39px;
+		width:15px;
+	}
+			
+	.ficha .nombre{
+		text-align:center;
+		font-size:16px;
+		border-bottom:1px solid #000;
+		height:40px;
+		vertical-align:middle;
+	}	
+	.ficha .nombre .tx{
+		text-align:center;
+		font-size:16px;
+		line-height:15px;
+		vertical-align:middle;
+		width:290px;
+		display:inline-block;
+	}		
+	
+	.ficha .alineanom{
+		height:40px;
+		width:1px;
+		display:inline-block;
+		vertical-align: middle;
+	}	
+	
+	.ficha .responsable{
+		height:22px;
+		width:174px;
+		display:inline-block;
+		border-bottom:1px solid #000;
+		vertical-align: middle;
+		line-height: 11px;
+	}			
+	.ficha .estado{
+		height:22px;
+		width:175px;
+		display:inline-block;
+		border-bottom:1px solid #000;
+		border-left:1px solid #000;	
+		vertical-align: middle;	
+		line-height: 11px;
+	}	
+	
+	.ficha .descripcion{
+		margin:5px;
+	}	
+	
+	.ficha .imagen{
+		max-width:290px;
+		max-height:290px;
+		margin:5px;
+		margin-right:0px;
+		display:inline-block;
+		vertical-align: middle;
+	}	
+	
+	.ficha .alineaimg{
+		height:300px;
+		width:1px;
+		display:inline-block;
+		vertical-align: middle;
+	}	
+	.ficha .categorias>div{
+		border-bottom:1px solid #000;
+	}
+	.ficha .categorias>div:last-child{
+		border:none;
+	}
+	.ficha .categoria>div{
+		margin:5px;
+	}	
+	
+table#tabla{
+	font-size:10px;
+	border-collapse:collapse;
+}
+tr, td, th{
+	font-size:inherit;
+	border:1px solid #000;
+}
+tr.impar{
+	background-color:#ddd;
+	
+}
+tr.par{
+	background-color:#fff;
+	
+}
+th.localizacion{
+ width: 85px;
+}
+
+
+.ficha .resaltado{
+	font-weight:bold;
+}
+
+
+#modeloNuevopunto{
+	display:none;
+}
+#modeloP{
+	display:none;
+}
+
+div.VIN{
+width:8px;
+height:9px;
+position:absolute;	
+left:-2px;
+z-index: 2;
+}
+
+div.VIN.inferior{
+	top:5px;
+	background-image:url('../img/RELflechadown.png');
+}
+div.VIN.superior{
+	bottom:5px;
+	background-image:url('../img/RELflechaup.png');
+}
+
+.aclaracion{
+	font-size:9px;
+	font-weight:bold;
+}
+
+	body{
+		font-size:10px;
+		vertical-align:top;
+	}	
+	
+	h2{
+		margin:0px;
+		font-size:10px;
+	}
+	
+	#page{
+		font-size:inherit;
+	}
+
+	form{
+		margin:0;
+	}
+
+
+	textarea{
+		font-size:11px;
+		font-family:"Ropa Sans-local","Ropa Sans",sans-serif;
+		width:100%;
+	}
+	
+	input{
+		font-size:11px;
+		font-family:"Ropa Sans-local","Ropa Sans",sans-serif;
+		width:100%;
+	}
+	
+	input[type='submit'],input[type='button']{
+		width: 50%;
+	}
+	
+	.nivel1{
+		width:784px;
+		min-height:50px;
+		display:block;
+		border:1px solid #000;
+		background-color:#fff;
+	}
+
+	.nivel2{
+		width:584px;
+		min-height:50px;
+		display:inline-block;
+		border:1px solid #000;
+		background-color:#eee;
+		margin:1px;
+	}  
+
+	.nivel3{
+		width:384px;
+		min-height:50px;
+		display:inline-block;
+		border:1px solid #000;
+		background-color:#ccc;
+		margin:1px;
+	}  
+	
+	.nivel1 .encabezado{
+		width:194px;
+		display:inline-block;
+		min-height:50px;
+		margin:1px;
+		vertical-align:top;
+	}
+
+	.nivel3 .imagen{
+		height:50px;
+	}
+	
+	.contenidos{
+		display:inline-block;
+		min-height:50px;
+		vertical-align:top;
+	}
+
+	.nivel1 > .contenidos{
+		width:194px;
+	}	
+
+	.nivel2 > .contenidos{
+		width:384px;
+	}
+
+	.nivel3 .contenidos{
+
+	}
+	
+	.nivel3>.encabezado{
+		width:100%;
+	}	
+	
+	.color{
+		display:block;
+		height:10px;
+	}
+
+	.nombre{
+		font-size:13px;
+		font-weight:bold;
+	}
+
+	.numero{
+		position:relative;
+	}
+
+	form{
+		 display: inline-block;
+	}
+
+	form.oculto{
+		display:none;
+	}
+	form#modeloresponsable{
+		display:none;
+	}
+	.aux.num{
+		width:30px;
+		border:1px solid red;
+		position:absolute;
+		right:0px;
+	}
+	
+	select{
+		display:inline-block;
+	}
+	
+	.subtitulo{
+		display:block;
+		font-weight:bold;
+		font-size:12px;
+	}
+	
+	@media print{
+		 div.anade{
+		 	display:none;
+		 }
+		 body{
+		 	background-image:none;
+		 }
+		 #page{
+		 	background-image:none;
+		 	border:0px;
+		 }	
+		 #pageborde{
+		 	border:0px;
+		 	background-color:transparent;
+		 }			 
+		 a{
+		 	display:none;
+		 }	
+		 .aux{
+		 	display:none;
+		 } 
+	} 

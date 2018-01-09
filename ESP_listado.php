@@ -106,16 +106,8 @@ while($row=mysql_fetch_assoc($res)){
 
 //echo "<pre>";print_r($_SESSION['preferencias']);echo "</pre>";
 
-$mc=microtime(true)-$mc;//medicion de rendimiento lamp
-$mcA[]=$mT-microtime(true);
-$mT=microtime(true);
 
-
-insertarmenu();
-
-$mc=microtime(true)-$mc;//medicion de rendimiento lamp
-$mcA[]=$mT-microtime(true);
-$mT=microtime(true);
+insertarmenu();;
 
 $VarD=array();
 //$VarD= variablesDisponibles();// consulta las variables que tienen al menos una comunicacion coincidente.
@@ -125,7 +117,7 @@ $VarD=array();
 	<title>Panel de control</title>
 	<link rel="stylesheet" type="text/css" href="./css/panelbase.css">
 	<link rel="stylesheet" type="text/css" href="./css/objetoscomunes.css">	
-	<link rel="stylesheet" type="text/css" href="./css/ESP.css">
+	<link rel="stylesheet" type="text/css" href="./css/ESP.css">	<link rel="stylesheet" type="text/css" href="./css/ESP_listado2.css">
 	
 	<?php 
 	include("./includes/meta.php");
@@ -202,6 +194,7 @@ $VarD=array();
 				<a id='botonanadir' onclick='anadirItem()'>añadir ítem</a>
 				<div 
 					class='hijos'
+					nivel="0"
 					ondrop="drop(event,this)" 
 					ondragover="allowDrop(event,this);resaltaHijos(event,this)" 
 					ondragleave="desaltaHijos(this)" 
@@ -294,6 +287,7 @@ $VarD=array();
 				_clon.setAttribute('idit',_dat.id);
 				_clon.querySelector('h3').innerHTML=_dat.titulo;
 				_clon.querySelector('p').innerHTML=_dat.descripcion;
+				_clon.setAttribute('nivel',"1");
 				
 				for(_na in _dat['archivos']){
 					_dar=_dat['archivos'][_na];
@@ -320,6 +314,9 @@ $VarD=array();
 				if(_Items[_ni].id_p_ESPitems_anidado!='0'){
 					//alert(_Items[_ni].id_p_ESPitems_anidado);
 					_dest=document.querySelector('#contenidoextenso > .hijos .item[idit="'+_Items[_ni].id_p_ESPitems_anidado+'"] > .hijos');
+					_niv=_dest.parentNode.getAttribute('nivel');
+					_niv++;
+					_el.setAttribute('nivel',_niv.toString());
 					_dest.appendChild(_el);
 				}
 			}
@@ -330,10 +327,11 @@ $VarD=array();
 				if(typeof _itemscargados[_nni]=='object'){
 					_esp=document.createElement('div');				
 					_esp.setAttribute('class','medio');
+					_esp.innerHTML='<div class="submedio"></div>';
 					_esp.setAttribute('ondragover',"allowDrop(event,this);resaltaHijos(event,this)");
 					_esp.setAttribute('ondragleave',"desaltaHijos(this)");
 					_esp.setAttribute('ondrop',"drop(event,this)");  
-					_itemscargados[_nni].parentNode.insertBefore(_esp, _itemscargados[_nni].nextSibling);
+					_itemscargados[_nni].parentNode.insertBefore(_esp, _itemscargados[_nni]);
 				}
 			}
 		}
@@ -507,10 +505,8 @@ $VarD=array();
     			
     		}else if(JSON.parse(_event.dataTransfer.getData("text")).tipo=='item'){
     			
-    			if(confirm('¿Confirma que quiere eliminar el Item y todo su contenido?')==true){
-    				
-    				
-    				
+    			if(confirm('¿Confirma que quiere eliminar el Item y todo su contenido?')==true)
+	
     			}
     			return;
     			
@@ -724,17 +720,18 @@ $VarD=array();
 			    
 		    }else if(_event.target.getAttribute('class')=='hijos'){
 		    	_dest=_event.target;
-
 			    _dest.appendChild(_el);
 			    _dest.appendChild(_em);
 		    	
 		    	
 		    }else{
 		    	alert('destino inesperado');
-		    	
-		    	return;
-		    	
+		    	return;		    	
 		    }
+		    
+		    _niv=_dest.parentNode.getAttribute('nivel');
+		    _niv++;
+		    _el.setAttribute('nivel',_niv.toString());
 		    		    
 		    _NuevoIdIt=_dest.parentNode.getAttribute('idit');
 		    

@@ -1,0 +1,67 @@
+
+@font-face {
+  font-family: 'Ropa Sans-local';
+  font-style: normal;
+  font-weight: 400;
+  src: url('./ropa sans-2012-3.woff') format('woff'), local('Ropa Sans'), local('RopaSans-Regular');
+}
+
+body{
+	background-image:none;
+	font-family: 'Ropa Sans-local', 'Ropa Sans', sans-serif;	
+	overflow-y:scroll;
+	font-size:10px;
+	margin:0px;
+}
+
+a{
+	font-size:10px;
+	margin:0px;
+}
+
+
+p{
+	margin:0px;
+	font-size:10px;
+}
+
+h3, h2, h1{
+	font-size:12px;
+	margin:0px;
+		display:inline-block;
+		    width: auto;
+}
+
+form{
+	display:block;
+	margin:0px;
+	font-size:12px;
+}
+
+select{
+	margin:0px;
+	font-size:12px;
+	
+}
+
+	
+input{
+	margin:0px;
+	font-size:10px;
+	height:15px;
+	padding:0;
+	display:inline-block;
+	  font-family: 'Ropa Sans-local';
+}
+
+textarea{
+	margin:0px;
+	font-size:12px;	
+}
+
+div{
+	margin:0px;
+	font-size:12px;
+	
+}
+

@@ -1,0 +1,125 @@
+@font-face {
+  font-family: 'verdana';
+  font-style: normal;
+  font-weight: normal;
+  src: local('verdana'), url('verdana.TTF') format('truetype');
+}
+	
+ul{
+	list-style-type:none;
+	margin:0px 0px 0px 0px;
+	pading-left:0px;
+	font-size:9px;
+}
+
+li{
+line-height:1;
+margin-bottom:5px;
+}
+
+h1{
+position:static;
+margin-left:50px;
+width:550px;
+margin-bottom:5px;
+}
+
+.marco{
+	position:static;
+	border:2px solid gray;
+	width:758px;
+	margin-bottom:10px;
+	padding:1px;
+}
+
+	
+.background{
+	z-index:-1;
+	float:none;
+}
+
+.explicacion{
+	position:static;
+	font-size:13px;
+	z-index:0;
+	width:620px;
+	margin: 0 0 10px 40px;
+}	
+
+.descrip{
+	font-size:12px;
+	position:absolute;
+	width:320px;
+	top:66px;
+	left:430px;
+	height:240px;
+	overflow-y: auto;
+}
+		
+.epigrafe{
+	font-size:13px;
+	font-weight:bolder;
+	color:white;
+	position:absolute;
+	top:375px;
+	left:35px;
+	width:350px;
+}
+
+.foto{
+	position:absolute;
+	top:30px;
+	left:40px;
+	width:303px;
+	height:326px;
+	border:1px solid;	
+}
+	
+.registro{
+	position:relative;
+}	
+
+.center{
+	top:260px;
+
+}
+
+.global{
+	position:absolute;
+	top:-250px;
+	left:-380px;
+	width:716px;
+	border:0px none gray;
+	padding:0 0 0 0;	
+}
+
+.encabezado{
+	position:static;
+	width:759px;
+	border:2px solid gray;
+	padding:0 0 0 0;
+	margin-bottom:10px;				
+}
+
+.ruta{
+	margin-top:6px;
+}
+
+.principal{
+	position:static;
+	width:759px;
+	margin-bottom:10px;		
+}	
+
+.pie{
+	height:50px;
+	width:759px;
+	border:2px solid gray;
+	position:static;
+	margin-bottom:10px;
+	/*margin:20px 0px 50px 190px;*/
+}
+
+.navega{
+	width:500px;	
+}

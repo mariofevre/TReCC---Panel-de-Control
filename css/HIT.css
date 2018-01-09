@@ -1,0 +1,357 @@
+
+p{
+	margin:0 10px;
+}
+
+h1{
+	margin:0 10px;
+}
+
+h2 {
+    font-size: 18px;
+    margin: 0 0 0 10px;
+}		
+
+input.fecha{
+	float:left;
+	width:40px;		
+}		
+
+input.chico{
+	width:560px;
+}		
+
+input.mini{
+	float:left;
+	width:25px;
+}		
+
+select.chico{
+	width:100px;
+}	
+
+select{
+	width:40px;
+}	
+
+option{
+	font-family: 'Ropa Sans-local','Ropa Sans',sans-serif;
+	font-size: 10px;
+	width:60px;
+	
+}	
+	
+th{
+font-size:12px;
+text-align:right;
+background-color:#DBF7FE;
+width:100px;
+}
+
+td{
+text-align:center;
+border:solid 1px gray;
+}
+
+.salva{
+width:90px;
+margin-bottom:5px;
+float:left;
+}
+
+.reporte{
+width:200px;
+}
+
+.marco{
+	border-bottom: 1px solid #EEEEEE ;
+	float: none;
+	width: 100%;		
+}
+
+.referencia{
+	font-size: 10px;
+}
+
+.alerta{
+	background-color:#f00;
+}
+
+.similth{
+	background-color:transparent;
+	width:800px;
+	text-align:left;
+}	
+	
+.fila{
+	display:block;
+	width:784px;
+	border-top:#CDF0F9 3px solid;
+	height:20px;
+	vertical-align:middle;
+}
+.fila > a, .fila > div{		
+	 vertical-align: inherit;
+}
+
+.titulo{
+	display:inline-block;
+	background-color:#DBF7FE;
+	width:80px;
+	height:20px;
+	font-size:11px;	
+	margin-right: -7px;		
+	text-align:center;
+	overflow:hidden;
+	line-height:10px;
+}	
+
+
+.seleccion{
+	width:20px;
+	font-size:14px;	
+}		
+
+.accion{
+	width:45px;
+	line-height:12px:
+}		
+
+.aclaracionsubmit{
+	width:120px;
+	height:24px;
+	font-size:12px;
+	font-weight:normal;
+	display:inline-block;
+}
+
+.contenido.alta{
+	font-size:10px;
+}
+.contenido.baja{
+	font-size:10px;
+}		
+
+.cerrada{
+	color:silver;
+}
+
+a:hover{
+	color:#000;
+}
+
+
+.id_p_B_usuarios_usuarios_id_nombre_autor{
+	width:45px;
+}	
+.id_p_B_usuarios_usuarios_id_nombre_responsable{
+	width:45px;
+}		
+	
+.tareas{
+	width:219px;
+}		
+	
+div.tareas > div > a{
+	display:inline-block;
+	border-bottom:#CDF0F9 1px solid;
+}			
+
+div.tareas > div > a.terminada{
+	color:silver;
+}	
+		
+div.descrip{
+	width:40px;
+	line-height:14px;
+}
+
+
+.accionseleccion{
+	display:auto;
+}
+
+.precontenido.respuesta{
+	height:10px;
+	text-align:left;
+	margin-top:-2px;
+	line-height:10px;
+	width:15px;
+	border:none;
+}
+
+.agrupado{
+	border:none;
+}	
+				
+				
+button{
+	min-width:160px;
+	padding:0px;
+}
+#botonrespuesta{
+	position:absolute;
+	left:22px;
+	top:17px;
+	
+}
+#botonrespuesta:hover{
+	border:1px solid #fff;
+	left:21px;
+	top:16px;	
+}	
+		
+  
+@media print {
+	#encabezado{
+	visibility: hidden;
+	position:absolute;
+	}
+	body{
+		background-image:none;
+	}
+	#contenidoextenso{
+		overflow:hidden;
+		width:717px;
+	}		
+	#page{
+		width:717px;
+	}			
+	
+	#pageborde{
+		margin:0px;
+		width:734px;
+	} 
+}
+
+#tipo{
+	display:inline-block;
+	width:15px;
+	text-align:center;
+    font-size: 11px;
+    line-height: 10px;
+    overflow:hidden;
+    
+}	
+	
+	
+.nombre{
+	display:inline-block;
+	width:390px;
+	font-size:14px;
+}
+
+.grupos{
+	display:inline-block;
+	width:20px;
+	text-align:center;
+    font-size: 11px;
+    line-height: 10px;
+    overflow:hidden;
+}	
+	
+	
+.actor{
+	display:inline-block;
+	width:110px;
+    font-size: 11px;
+    line-height: 10px;
+}
+
+.opcion{
+	display:inline-block;
+	width:80px;
+    font-size: 11px;
+    line-height: 10px;
+}
+
+
+.tipo{
+	display:inline-block;
+	width:15px;
+	font-size:14px;
+}
+.tipo{
+	font-size:16px;
+	font-weight:bolder;
+	text-align:center;
+	cursor:pointer;
+}		
+
+
+.fecha{
+	display:inline-block;
+	width:120px;
+	font-size:14px;
+	font-weight:bold;
+}		
+
+.escala{
+	display:inline-block;
+	width:60px;
+	font-size:10px;
+}	
+.fechaprev{
+	display:inline-block;
+	width:55px;
+	font-size:10px;
+}	
+.estado{
+	display:inline-block;
+	width:45px;
+	font-size:10px;
+	text-align:center;
+}	
+
+.versiones{
+	display:inline-block;
+	width:45px;
+	font-size:10px;
+	
+}	
+				
+.version{
+	display:inline-block;
+	width:20px;
+	height:20px;
+	font-size:10px;
+	background-color:lightblue;
+	border:1px solid;
+	border-color:red red blue blue;
+	overflow:hidden;
+}
+
+.aprobada{
+	background-color:green;
+}
+.rechazada{
+	background-color:red;
+}
+.enevaluacion{
+	background-color:blue;
+}
+.apresentar{
+	background-color:grey;
+}
+
+#recuadro{
+	position:fixed;
+	width:180px;
+	top:160px;
+	left:0px;
+	height:150px;
+	background-color:#fff;
+	border:1px solid lightblue;
+}
+
+.estado.vencido{
+	color:red;
+	background-color: pink;
+    border-color: #ffc0cb #f00 #f00 #ffc0cb;
+}
+
+.estado.ocurrido{
+    background-color: lightgreen;
+    border-color: #cdf7cd #008000 #008000 #cdf7cd;
+}
+

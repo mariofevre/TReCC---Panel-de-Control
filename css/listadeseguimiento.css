@@ -1,0 +1,295 @@
+p{
+margin:0 10px;
+}
+
+h1{
+margin:0 10px;
+}
+
+h2 {
+    font-size: 18px;
+    margin: 0 0 0 10px;
+}
+
+input.fecha{
+float:left;
+width:40px;		
+}		
+
+input.chico{
+width:560px;
+}		
+
+input.mini{
+float:left;
+width:25px;
+}		
+
+select.chico{
+width:100px;
+}			
+	
+th{
+font-size:12px;
+text-align:right;
+background-color:#DBF7FE;
+width:100px;
+}
+
+td{
+text-align:center;
+border:solid 1px gray;
+}
+
+.salva{
+width:90px;
+margin-bottom:5px;
+float:left;
+}
+
+.reporte{
+width:200px;
+}
+
+.marco{
+border-bottom: 1px solid gray;
+float: none;
+width: 100%;		
+}
+
+.referencia{
+font-size: 10px;
+}
+
+.alerta{
+background-color:red;
+}
+
+.similth{
+background-color:none;
+width:800px;
+text-align:left;
+}	
+
+.fila{
+	display:block;
+	width:784px;
+	border-bottom:2px solid black;
+}
+
+.contenido{
+	display:inline-block;
+	width:80px;
+	font-size:12px;
+	overflow:hidden;
+	height:auto;
+	text-align:left;
+	line-height:20px;
+	vertical-align: top;
+}		
+.titulo{
+	display:inline-block;
+	background-color:#DBF7FE;
+	width:80px;
+	height:20px;
+	font-size:11px;	
+	margin-right: -7px;		
+	text-align:left;
+	overflow:hidden;
+	line-height:10px;
+}			
+
+.nombre{
+	width:306px;
+	font-size:17px;	
+	line-height:17px;
+}
+.accion{
+	width:70px;
+}		
+
+.aclaracionsubmit{
+	width:120px;
+	height:24px;
+	font-size:12px;
+	font-weight:normal;
+	display:inline-block;
+}
+
+.estado{
+	width:85px;
+}
+
+.alta, .baja{
+	width:55px;
+}			
+
+.contenido.alta{
+	font-size:10px;
+}
+.contenido.baja{
+	font-size:10px;
+}		
+
+.cerrada{
+	color:silver;
+}
+
+.id_p_B_usuarios_usuarios_id_nombre_autor{
+	width:45px;
+}	
+.id_p_B_usuarios_usuarios_id_nombre_responsable{
+	width:45px;
+}		
+	
+.tareas{
+	width:770px;
+	height:auto;
+	text-align:left;
+	display: inline-block;
+}		
+
+a.item{
+	display:inline-block;
+	margin-left: 12px;
+}			
+
+.filaitem{
+	width:760px;
+	border-top:silver 1px solid;
+	margin-left: 12px;
+}
+
+.filaitem > div{
+	display:inline-block;
+	margin-left:8px;
+	vertical-align: top;
+}
+		
+
+.terminada{
+	color:#90949F;
+	background-color:#ffffff;
+}	
+	
+.vencida{
+	color:#9F0929;
+	background-color:#FF7D9A
+}	
+
+.activa{
+	color:#077B98;
+	background-color:#7DE6FF;
+}		
+			
+.descrip{
+	width:328px;
+}		
+
+div.descrip > div{
+	line-height:15px;		
+}
+
+
+a.borraitem{
+	display:block;
+	width:15px;
+	height:20px;
+	position:absolute;
+}
+
+.itemnombre{
+	width: 287px;
+	font-size:14px;
+	line-height:13px;
+	margin:2px;
+}
+
+.itemdescripcion{
+	width:320px;
+	line-height:15px;
+	text-align:justify;
+	margin:2px;
+}
+
+.itemestado{
+	width:140px;
+	line-height:12px;
+	font-size:12px;
+}
+
+.dato.reclamo{
+	margin:2px;
+	font-size:11px;
+	font-style:italic;
+	text-align:justify;
+}
+
+.filaitem > div {
+	margin-left:0px;
+}
+
+.contenido.tareas:last-child{
+	 margin-bottom:5px;
+}
+
+a.filaitem{
+	margin-left:12px;
+	display:inline-block;
+}
+ 
+
+a.filagrupo{
+	margin:0px;
+}
+
+.filaitem > div:hover{
+	color:#fff;
+	background-color: #08AFD9;
+}		
+
+div.contenido.nombre:hover{
+	color:#fff;
+	background-color: #08AFD9;
+}	
+
+h2>a{
+	background-color:#fff;
+}
+@media print{
+	body{
+		font-family:Arial, Helvetica, sans-serif;
+		padding: 0px;
+		margin:0px;
+		background-image: none;
+	}
+	#pageborde {
+	    border: 2px solid #000;
+	    margin: 0;
+	    background-color:#fff;
+	 }
+	 
+	#encabezado {display:none;}
+		h1{
+			display:none;
+		}
+				
+		h2.modos{
+			display:none;
+		}
+
+	#contenidoextenso {
+		margin: 0;
+	}
+    
+	#page {
+	    background-color: #ffffff;
+	    background-image: none;
+	    background-repeat: no-repeat;
+	    margin: 0px;
+	}
+	a {
+	    color: #000;
+	}
+
+}
