@@ -3,7 +3,7 @@
 /**
 * COM_ed_guarda_doc.php
 *
-* procesa archivos subidos referidos a una comunicacion
+* procesa archivos subidos referidos a documentos
 * @package    	TReCC(tm) paneldecontrol.
 * @subpackage 	
 * @author     	TReCC SA

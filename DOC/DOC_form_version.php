@@ -56,7 +56,7 @@ echo utf8_encode("
 	<input id='Iprevistoactual_d' class='mini' name='previstoactual_d'>-<input id='Iprevistoactual_m' class='mini' name='previstoactual_m'>-<input id='Iprevistoactual_a' class='fecha' name='previstoactual_a'>
 	
 	<br>
-	<label>Copias digitales:</label>
+	<label>Archivos	 digitales:</label>
 	<div id='archivos'>
         <div id='listadosubido'></div>
         <div id='listadosubiendo'></div>
@@ -72,7 +72,7 @@ echo utf8_encode("
 	<textarea id='Idescripcion' name='descripcion'></textarea>	
 
 	<div id='comunicaciones'>
-		<label><span class='enevaluacion'>Presentado</span> Por:</label>
+		<label id='labelpresenta'><span class='enevaluacion'>Presentado</span> Por:</label>
 		<div id='datoscomPresenta'>
             <a class='vacia' onclick='vaciar(this);'>vaciar</a>
 			<a class='elige' onclick='elegirCom(this,\"presenta\");'>
@@ -80,7 +80,7 @@ echo utf8_encode("
 			</a><span class='muestra'></span><input type='hidden' id='Iid_p_comunicaciones_id_ident_entrante' name='id_p_comunicaciones_id_ident_entrante'>
 		</div>
 		
-		<label><span class='aprobada'>Aprobado</span> Por:</label>
+		<label id='labelaprueba'><span class='aprobada'>Aprobado</span> Por:</label>
 		<div id='datoscomAprueba'>
 		 <a class='vacia' onclick='vaciar(this);'>vaciar</a>
 			<a class='elige'  onclick='elegirCom(this,\"aprueba\");'>
@@ -88,7 +88,7 @@ echo utf8_encode("
 			</a><span class='muestra'></span><input type='hidden' id='Iid_p_comunicaciones_id_ident_aprobada' name='id_p_comunicaciones_id_ident_aprobada'>
 		</div>
 		
-		<label><span class='rechazada'>Rechazado</span> Por:</label>
+		<label id='rechaza'><span class='rechazada'>Rechazado</span> Por:</label>
 		<div id='datoscomRechaza'>
             <a class='vacia' onclick='vaciar(this);'>vaciar</a>
 			<a class='elige' onclick='elegirCom(this,\"rechaza\");'>
@@ -96,7 +96,7 @@ echo utf8_encode("
 			</a><span class='muestra'></span><input type='hidden' id='Iid_p_comunicaciones_id_ident_rechazada' name='id_p_comunicaciones_id_ident_rechazada'>
 		</div>
 		
-		<label><span class='anulada'>Anulado</span> Por:</label>
+		<label id='labelanula'><span class='anulada'>Anulado</span> Por:</label>
 		<div id='datoscomAnula'>
             <a class='vacia' onclick='vaciar(this);'>vaciar</a>
 			<a class='elige'  onclick='elegirCom(this,\"anula\");'>

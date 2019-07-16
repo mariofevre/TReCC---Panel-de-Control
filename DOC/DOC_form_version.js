@@ -48,6 +48,8 @@ function elegirCom(_this,_tipo){
 		}		
 		_this.nextSibling.style.backgroundColor='#fff';//deselecciona actual span de muestra
 		
+		document.querySelector('#op_comunicaciones').style.display='inline-block';
+		
 		_divs=document.querySelectorAll('#op_comunicaciones #sentido div a,	#op_comunicaciones #sentido div h4,	#op_comunicaciones #contrasentido div a,#op_comunicaciones #contrasentido div h4');
 		
 		for(_nn in _divs){
@@ -57,7 +59,7 @@ function elegirCom(_this,_tipo){
 		}
 
 		var _this = _this;
-		InputComActivo=_this;
+		InputComActivo =_this;
         _parametros={'panid':_PanelI}
 		
  		$.ajax({
@@ -107,7 +109,7 @@ function elegirCom(_this,_tipo){
 					
 					_op.innerHTML+=_dat.falsonombre;
 					_op.setAttribute('idreg',_dat.id);
-					_op.setAttribute('onclick',"InputComActivo.nextSibling.innerHTML=this.innerHTML;InputComActivo.nextSibling.nextSibling.value=this.getAttribute('idreg');");
+					_op.setAttribute('onclick',"seleccionaCom(this)");
 					//console.log("#op_comunicaciones #"+_sent+" #"+_div);
 					_form.querySelector("#op_comunicaciones #"+_sent+" #"+_div+",#op_comunicacionesCambia #"+_sent+" #"+_div).appendChild(_op);
 					//<span class="contenedor aclara">					
@@ -251,6 +253,32 @@ function elegirCom(_this,_tipo){
 	
 }	
 	
+	
+function seleccionaCom(_this){
+
+	_selecTx=_this.innerHTML;
+	_selecTitle=_this.title;
+	_selecId=_this.getAttribute('idreg');
+	
+		
+	InputComActivo.parentNode.querySelector('span.muestra').style.backgroundColor='';
+	InputComActivo.parentNode.querySelector('span.muestra').innerHTML=_selecTx;
+	InputComActivo.parentNode.querySelector('span.muestra').title=_selecTitle;
+	InputComActivo.parentNode.querySelector('span.muestra').setAttribute('onclick','verCom(this)');
+	InputComActivo.parentNode.querySelector('input').value=_selecId;
+	
+	InputComActivo.parentNode.querySelector('.vacia').style.display='inline-block';
+	InputComActivo.parentNode.querySelector('.elige').style.display='none';
+	document.querySelector('#op_comunicaciones').style.display='none';
+}
+
+function verCom(_this){
+	if(_this.parentNode.querySelector('input').value>0){
+		_url="http://192.168.0.237/paneldecontrol/COM_gestion.php?id="+_this.parentNode.querySelector('input').value;
+		window.open(_url,'_blank');
+	}
+}
+
 function cargaCom(_idcom,_span){//consulta y carga las comunicaciones de una versión al formulario
 
 	var _idcom = _idcom;		
@@ -279,6 +307,7 @@ function cargaCom(_idcom,_span){//consulta y carga las comunicaciones de una ver
 			}else{
 				_grupocod=_Grupos.grupos[_dat.idga].codigo;
 			}
+			_span.setAttribute('onclick','verCom(this)');
 			_span.innerHTML='<span class="contenido aclara">'+_grupocod+'</span>';
 			if(_Grupos.grupos[_dat.idgb]==undefined){
 				_grupocod='Grl';
@@ -302,9 +331,9 @@ function vaciar(_this){
 		alert('su usuario no tiene permisos de edicion');
 		return;
 	}
-	_this.parentNode.querySelector('.muestra').innerHTML='- ninguna -';
+	_this.parentNode.querySelector('.muestra').innerHTML='';
 	_this.style.display='none';
-	_this.parentNode.querySelector('.elige').style.display='inline';
+	_this.parentNode.querySelector('.elige').style.display='inline-block';
 	_this.parentNode.querySelector('input').value='-[-BORRX-]-';
 }
 

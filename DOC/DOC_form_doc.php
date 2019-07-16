@@ -44,14 +44,18 @@ header('Content-Type: text/html; charset=CP1252');
 	<input type='hidden' id='cid' name='iddoc'>
 	<input id='Iaccion' type='hidden' value='' name='accion'>	
 		
-	<label>Número de Documento</label>
-	<input id='Inumero' name='numero'>
-
-	<label>Nombre del Documento</label>
-	<input id='Inombre' name='nombre'>
+	<div>
+		<label>Número de Documento</label>
+		<input id='Inumero' name='numero'>
+	</div>
+	
+	<div>
+		<label>Nombre del Documento</label>
+		<input id='Inombre' name='nombre'>
+	</div>
 	
     <div>
-	<label>grupo primario</label>
+		<label>grupo primario</label>
 		<input 
             type='hidden' 
             id='Iid_p_grupos_id_nombre_tipoa' 
@@ -122,37 +126,39 @@ header('Content-Type: text/html; charset=CP1252');
     
     
     <div>
-    <label>Sector</label>
-    <input 
-        type='hidden' 
-        id='Iid_p_DOCdef_id_nombre_tipo_sector' 
-        name='id_p_DOCdef_id_nombre_tipo_sector'
-    ><input 
-        name='id_p_DOCdef_id_nombre_tipo_sector-n' 
-        id='Iid_p_DOCdef_id_nombre_tipo_sector-n' 
-        onblur='vaciarOpcionares(event);if(this.value==""){this.value="-";}' 
-        onkeyup='filtrarOpciones(this);' 
-        onfocus='opcionarDef(this);'><div class='auxopcionar'><div class='contenido'></div></div>
+	    <label>Sector</label>
+	    <input 
+	        type='hidden' 
+	        id='Iid_p_DOCdef_id_nombre_tipo_sector' 
+	        name='id_p_DOCdef_id_nombre_tipo_sector'
+	    ><input 
+	        name='id_p_DOCdef_id_nombre_tipo_sector-n' 
+	        id='Iid_p_DOCdef_id_nombre_tipo_sector-n' 
+	        onblur='vaciarOpcionares(event);if(this.value==""){this.value="-";}' 
+	        onkeyup='filtrarOpciones(this);' 
+	        onfocus='opcionarDef(this);'><div class='auxopcionar'><div class='contenido'></div></div>
     </div>     
 
     <div>    
-    <label>Tipologìa</label>
-    <input 
-        type='hidden' 
-        id='Iid_p_DOCdef_id_nombre_tipo_tipologia' 
-        name='id_p_DOCdef_id_nombre_tipo_tipologia'
-    ><input 
-        name='id_p_DOCdef_id_nombre_tipo_tipologia-n' 
-        id='Iid_p_DOCdef_id_nombre_tipo_tipologia-n' 
-        onblur='vaciarOpcionares(event);if(this.value==""){this.value="-";}' 
-        onkeyup='filtrarOpciones(this);' 
-        onfocus='opcionarDef(this);'><div class='auxopcionar'><div class='contenido'></div></div>
+	    <label>Tipologìa</label>
+	    <input 
+	        type='hidden' 
+	        id='Iid_p_DOCdef_id_nombre_tipo_tipologia' 
+	        name='id_p_DOCdef_id_nombre_tipo_tipologia'
+	    ><input 
+	        name='id_p_DOCdef_id_nombre_tipo_tipologia-n' 
+	        id='Iid_p_DOCdef_id_nombre_tipo_tipologia-n' 
+	        onblur='vaciarOpcionares(event);if(this.value==""){this.value="-";}' 
+	        onkeyup='filtrarOpciones(this);' 
+	        onfocus='opcionarDef(this);'><div class='auxopcionar'><div class='contenido'></div></div>
     </div>        
     
     <br>
-    <label class='grande' >decripción extendida del indicador</label>
-    <textarea id='cdescripcion' name='descripcion'></textarea>
-		
-		
+    
+    <div id='descripcion'>
+	    <label class='grande' >decripción extendida del Documento</label>
+	    <textarea id='cdescripcion' name='descripcion'></textarea>
 	</div>
+		
+	
 
