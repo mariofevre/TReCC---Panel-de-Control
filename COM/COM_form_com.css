@@ -1,0 +1,826 @@
+#form_com{
+	display:none;
+	width:90vw;
+	height:90vh;
+	position:fixed;
+	left:5vw;
+	top:5vh; 
+	border: 2px solid #08afd9;
+    box-shadow: 5px 5px 3px rgba(0, 0, 0, 0.2);
+    z-index:10;
+    background-color:#fff;
+    overflow-y: auto;
+    cursor:move;
+}
+
+
+.gris {
+	background-color:lightgray;
+}
+
+.carga {
+	background-color:#A9F5BC;
+}
+
+#form_com select{
+	width:100%;
+	height:16px;
+}
+
+#form_com input, select{
+	background:#ffffff;
+	font-family:'Ropa Sans-local';
+	font-size:10px;
+	color:#08AFD9;
+	margin:0;
+	vertical-align: text-bottom;
+}
+#form_com label{
+	vertical-align: text-bottom;
+	height:auto;
+}
+
+
+#form_com table{
+	margin:5px;
+}
+
+.dato{
+	min-height: 55px;
+}
+
+.boton{
+	width:80px;		
+}
+
+		
+.boton2{
+	width:25px;		
+}
+
+.boton3{
+	width:150px;
+}
+
+p{
+	margin:0 10px;
+}
+
+h1{
+	margin:0 10px;
+}
+
+h2, h3{
+	margin:2px 0 0 0;
+}		
+
+h1, h2{
+	width:auto;
+}
+		
+h3{	
+	font-size:10px;
+	font-weight:normal;	
+}
+
+input.fecha{
+	float:none;
+	width:40px;		
+}		
+
+input.chico{
+	width:100%;
+}		
+
+input.mini{
+float:none;
+	width:25px;
+}		
+
+select.chico{
+	width:100px;
+}			
+	
+th{
+	font-size:12px;
+	text-align:right;
+	background-color:lightblue;
+	width:100px;
+}
+
+td{
+	background:none;	
+}
+
+textarea#descripcion{
+	background:#ffffff;
+	font-family:'arial';
+	font-size:11px;
+	color:#08AFD9;
+	width:100%;
+	height:300px;
+}
+
+li{
+	color:#000;
+}
+button{
+	min-width: 10px;
+}
+.paquete{
+	width:300px;
+	margin-bottom:5px;
+	border: 1px gray solid; 
+	padding: 5px;
+	position:relative;
+	display:inline-block;
+	vertical-align:top;
+	font-size:12px;
+	overflow:visible;
+}
+
+.paquete.texto{
+	width: 616px;
+}
+
+.paquete.evolucion{
+	border: 1px gray solid; 
+	padding: 5px;
+	position:relative;
+}		
+
+.subpaquete.oficialidad{
+	position:absolute;
+	top:5px;
+	left:100px;
+	width:190px;
+}
+
+.subpaquete.emision{
+	position:absolute;
+	top:-5px;
+	left:213px;
+	width:90px;
+}
+		
+.subpaquete.medio{
+	width:50%;
+	display:inline-block;
+}
+
+.reporte{
+	width:200px;
+}
+
+.marco{
+	border-bottom: 1px solid gray;
+	float: none;
+	width: 100%;		
+}
+
+.referencia{
+	font-size: 10px;
+}
+
+.alerta{
+	background-color:red;
+}
+
+.similth{
+	background-color:none;
+	width:800px;
+	text-align:left;
+}	
+
+.similth > div{
+	background-color:lightblue;
+	width:100px;
+	margin-left:3px;
+	border:white 2px solid;
+	text-align:right;
+	position:relative;
+	top:-4px;
+}
+
+.entrante {
+    background-color: #839EF8;
+}
+
+.saliente {
+    background-color: #C1F270;
+}
+
+
+input.dia{
+	width:15px;	
+}
+input.ano{
+	width:38px;	
+}
+	
+form{
+	display:inline-block;
+}
+
+body{
+	margin:0;
+}
+
+td{
+    font-size: 10px;
+	padding: 1px;
+}
+
+div.medio{
+	width:calc(50% - 10px);
+	position:relative;
+	display:inline-block;
+}
+
+#form_com input[type="button"]{
+	position:relative;
+}
+ 
+#form_com input[type="submit"]{
+    font-size: 9px;
+    height: 17px;
+    line-height: 8px;
+    padding: 0;
+    width: 40px;
+    position:absolute;
+    top:35px;
+    right:5px;
+}
+
+
+#form_com input[type="submit"].general{
+    font-size: 13px;
+    height: 20px;
+    line-height: 13px;
+    width: 60px;
+    position:absolute;
+    top:35px;
+    right:5px;
+}	
+
+#form_com .eliminacion{
+    position:fixed;
+    top:105px;
+    left:650px;
+    width:50;
+    height:50px;
+}	
+
+
+#form_com input.cancela{
+    position:absolute;
+    top:5px;
+    right:5px;
+    font-size: 13px;
+    line-height: 13px;
+    width: 60px;
+    height: 20px;
+    line-height: 13px;
+}			
+#form_com input.imprimir{
+    position:absolute;
+    top:65px;
+    right:5px;
+    font-size: 13px;
+    line-height: 13px;
+    width: 60px;
+    height: 20px;
+    line-height: 13px;
+}		
+#form_com input.eliminar{
+    position: absolute;
+    top:90px;
+    right:5px;
+    font-size: 11px;
+    line-height: 13px;
+    width: 60px;
+    height: 15px;
+    line-height: 13px;
+	background-color:red;
+	color:#555;
+	font-weight:bold;
+}
+#form_com input[type="radio"]{
+    vertical-align:middle;
+}
+
+	
+#form_com input[readonly='readonly']{	
+	background-color:lightblue;		
+	height:4px;
+}
+
+#form_com  input[disabled='disabled']{	
+	background-color:lightblue;		
+	height:4px;
+}
+#form_com .paquete.texto h3{
+	position:relative;
+	z-index:20;
+	margin-bottom:2px;
+}
+
+
+#form_com .paquete.texto h3 #aclaraciones{
+	cursor:pointer;
+}
+
+#form_com  .paquete.texto h3 > a{ 
+	float:right;
+	border:1px solid #08afd9; 
+}
+#form_com  .paquete.texto a#guardamodelo{ 
+	display:none;
+
+}
+
+#form_com  .paquete.texto #aclaraciones{
+	display:none;
+	float:right;
+	background-color:yellow;	
+}
+
+#form_com  .paquete.texto #aclaraciones[estado="-1"]{
+	display:inline-block;
+	height:10px;
+	overflow:hidden;
+}
+
+#form_com  .paquete.texto #aclaraciones[estado="1"]{
+	display:inline-block;
+	height:100px;
+	overflow:visible;
+}
+
+#form_com  .paquete.texto h3 #guardarmodelo{
+	display:none;	
+	border:2px solid #08afd9; 	
+	background-color:#fff;
+	width:250px;
+	height:200px;
+	right:-262px;
+	position:absolute;
+}
+
+#form_com  .paquete.texto h3 #guardarmodelo label{
+	width:60px;
+}
+#form_com  .paquete.texto h3 #guardarmodelo input[name="mod_nombre"]{
+	width:177px;
+	
+}
+
+#form_com  .paquete.texto h3 #guardarmodelo input[type="submit"]{
+	position: relative;
+	top: 0;
+	right: 0;
+}
+
+
+
+#form_com  .paquete.texto a#cargamodelo #listacarga{
+	width:150px;
+	border: 2px solid #08afd9; 
+	box-shadow:5px 5px 5px rgba(0,0,0,0.5);
+	position:absolute;
+	right:-162px;
+	top:1px; 
+	display:none;
+	right: 0px;
+	top: 20px;
+	background-color: #fff;
+}
+#form_com  .paquete.texto a#cargamodelo #listacarga > span{
+	position:relative;
+	display:block;
+	text-align:right;
+}
+#form_com  .paquete.texto a#cargamodelo #listacarga > span:hover{
+	background-color: #08afd9;
+}
+#form_com  .paquete.texto a#cargamodelo #listacarga #modelos div:hover{
+	background-color: #08afd9;
+}
+
+#form_com  .paquete.texto a#cargamodelo #listacarga #modelos div a.borrarmodelo{
+	color:red;
+	border:1px solid red;
+	background-color:#fff;
+	position:absolute;
+	right:-17px;
+	width:12px;
+}
+#form_com  .paquete.texto a#cargamodelo #listacarga #modelos div a.borrarmodelo:hover{
+	background-color:red;
+	color:#000;
+}
+
+tr.secuencia.intro{
+	background-color:#A9F5F2;		
+}
+tr.secuencia.nudo{
+	background-color:#81F7BE;		
+}	
+tr.secuencia.fin{
+	background-color:#BEF781;		
+}	
+
+iframe{
+	height:161px;
+	border:none;
+}
+
+.paquete.clasificacion > div{
+	vertical-align:top;
+}
+.sugerencia{
+	vertical-align:middle;
+	line-height:14px;	
+}
+.sugerencia a{
+	display:inline-block;
+	background-color:#fff;
+	margin:1px;
+	width:48%;
+	height:14px;
+	overflow:hidden;
+	cursor:pointer;
+}
+
+.sugerencia.uno{
+	font-weight:bold;
+	text-shadow:1px 1px #000;
+}
+.sugerencia.dos{
+	font-weight:bold;
+}
+
+#mostrar, #desmostrar{
+	display:none;
+	color:lightblue;
+}
+
+.inactivo{
+	color:silver;
+}
+
+a.inactivo:visited{
+	color:silver;
+}	
+
+select[name='Paraorigen']{
+	width:60px;
+}
+
+.paquete.documentacion > a{
+	display:inline-block;
+	background-color: lightblue;
+	margin-left:1px;
+	margin-right:1px;
+	width:50px;
+}
+ 
+#form_com input[type="radio"]{
+	display:inline-block;	
+}	
+
+.hoja {
+    background-color: #fff;
+    border: 1px solid #000;
+    font-family: "goulong";
+    font-size: 12px;
+    font-weight: normal;
+    height: 980px;
+    left: 20px;
+    page-break-after: always;
+    position: relative;
+    width: 660px;
+}
+
+.cuerpo{
+	padding:15px;
+	text-align:justify;
+}
+
+#linkFImodelo{
+	display:none;	
+}
+#formFImodelo{
+	display:none;	
+}
+#adjuntos a{
+	border: medium none;
+    color: #e41937;
+    cursor: pointer;
+    display: inline-block;
+    text-decoration: none;
+    width: 160px;
+	max-height: 27px;
+ 	overflow: hidden;
+ 	vertical-align:middle;
+}
+#adjuntos input[type='text']{
+	width: 110px;
+	vertical-align:middle;
+}
+#adjuntos input[type='button']{
+	width: 15px;
+	vertical-align:middle;
+	background-color:#fff;
+}
+#adjuntos input[type='button']:hover{
+	background-color:#faa;
+	font-weight:bold;
+}
+#adjuntos input[type='button'].recuperar{
+	display:none;
+	color:#000;
+	font-weight:bold;
+	background-color:#f00;
+}
+#adjuntos input[type='button'].recuperar:hover{
+	background-color:#0f0;	
+}
+
+#adjuntoslista{
+	margin-top:10px;
+}
+#adjuntoslista h3[eliminar='si'] a{
+	text-decoration: line-through;
+}
+
+#uploader div{
+    border-bottom: 1px solid lightblue;
+    height: auto;
+    margin-top: 2px;
+    width: 123px;
+}
+
+#uploader{
+	position:absolute;
+	right:-2px;
+	top:0px;
+}
+#contenedorlienzo{
+	vertical-align:top;
+	display:block;
+	position:relative;
+	box-shadow:2px 2px 5px 2px rgba(0,0,0,0.5) inset;
+}
+
+
+#editorArchivos #contenedorlienzo{
+	height:60px;
+}
+
+.botoncerrar{
+	position:absolute;
+	right:1vw;
+	top:1vh;
+}
+
+#listadosubiendo > p{
+	display:block;
+	border:1px solid #999;
+	margin:1px;
+	color:#444;
+	background-color:#ccc;
+	height:15px;
+	white-space: nowrap;
+}
+
+#contenedorlienzo #lienzo{
+	vertical-align:top;
+	display:inline-block;
+	position:relative;
+	border:2px solid #aaa;
+}
+#contenedorlienzo #upload{		
+	position:absolute;
+	display:inline-block;
+	border:0px solid #aaa;
+	position:relative;
+	height:100%;
+	width:100%;
+}
+
+#contenedorlienzo #upload label{
+	height:calc(100% - 4px);
+	width:100%;
+	font-size:14px;
+	color:#999;
+	margin:0px;
+	text-align:center;
+	line-height:13px;
+	display: inline-block;
+}
+	
+#contenedorlienzo #uploadinput{
+	opacity:0;
+	height:100%;
+	width:100%;
+	position:absolute;
+	top:0;
+	left:0;
+	display:inline-block;
+}
+
+#fechas h3 .titulo{
+	display:inline-block;
+	width:100px;
+}
+.paquete.evolucion h3#tareas .medio{
+	vertical-align:middle;
+}
+.paquete.evolucion input,.paquete.evolucion span{
+	vertical-align:middle;
+}
+.paquete.evolucion h3#tareas > span{
+	display:inline-block;
+	width:48px;
+	vertical-align:middle;
+}
+.paquete.evolucion h3#tareas .medio span{
+	display:inline-block;
+	width:30px;
+	vertical-align:middle;
+}
+.paquete.evolucion h3#tareas .medio{
+	display:inline-block;
+} 
+.paquete.evolucion h3#tareas .cuarto#seccporescrito{
+	display:none;
+} 
+.paquete.evolucion h3#tareas .cuarto{
+	display:inline-block;;
+	width:70px;
+	text-align:right;
+	vertical-align:middle;
+}
+
+#fechas input[type='button']{
+	width:30px;
+	display:none;
+}
+#fechas input,#fechas div,#fechas span{
+	vertical-align:middle;
+}
+#fechas input[estado='cerrado']{
+	height:0px;
+	color:#bbb;
+	background-color:#bbb;
+}
+#cerrTogle{
+	display:inline-block;
+	height:auto;
+    cursor:pointer;
+    border:1px solid #fff;
+    height:12px;
+}
+div#cerrTogle:hover{
+    border:1px solid #08AFD9;
+}
+#cerrTogle img{
+	opacity:0.6;
+    margin:0;
+}
+#cerrTogle:hover img{
+	opacity:1;
+}
+
+#cerrTogle img[visible='no']{
+	display:none;
+}
+
+.dragborde.izquierdo{
+    position: absolute;;
+    left: -4px;
+    top: 0;
+    bottom: 0;
+    width: 12px;
+    cursor: w-resize;
+    background-color: lightblue;
+    z-index: 20;
+    height:100%;
+}
+.escroleable{
+    width: 99%;
+    margin: 10px;
+    position: relative;
+}
+
+#supervisornumero{
+	opacity:0;
+	
+	position:absolute;
+	border:1px solid #000;
+	font-size:8px;
+	line-height:8px;
+	
+	top: 0px;
+	right: -200px;
+	height: 200px;
+	width:200px;
+	
+	background-color:#fff;
+	z-index:100;
+	
+	cursor:grabbing;
+}
+#supervisornumero .COMcomunicacion{
+	font-size:8px;
+}
+
+
+#supervisornumero[consultado='fijo'] {
+    opacity:100;
+}
+
+#supervisornumero[consultado='si'] {
+    opacity:0;
+    animation-name: opacidadIdents;
+    animation-duration: 7s;
+}
+
+
+/* Standard syntax */
+@keyframes opacidadIdents{
+	0%   {opacity: 1;}
+    50%  {opacity: 0.8;}
+    90%  {opacity: 0.6;}
+    100% {opacity: 0;}
+}
+
+#supervisornumero #botoncerrarcuenta{
+	border:1px solid red;
+	color:red;
+	border-radius:2px;
+	font-size:11px;
+	text-align:center;
+	position:absolute;
+	top:1px;
+	right:1px;
+}
+#supervisornumero #cuentaregresiva{
+	border:1px solid #08afd9;
+	color: #08afd9;
+	border-radius:2px;
+	font-size:11px;
+	text-align:center;
+	position:absolute;
+	top:1px;
+	right:11px;
+}
+
+#supervisornumero #coincidenciabaja{
+	min-height:15px;
+	border-bottom:2px solid #444;
+}
+
+#supervisornumero #coincidenciamedia{
+	min-height:15px;
+	border-bottom:2px solid #444;
+}
+
+#supervisornumero #coincidenciatotal{
+	min-height:15px;
+	border-bottom:2px solid #444;
+}
+
+#supervisornumero #coincidenciatotal .COMcomunicacion{
+	font-size:12px;
+	line-height:12px;
+}
+
+#supervisornumero #coincidenciamedia .COMcomunicacion{
+	font-size:10px;
+	line-height:10px;
+}
+
+#supervisornumero #coincidenciamedia .COMcomunicacion{
+	font-size:12px;
+	line-height:12px;
+}					
+
+select[sentido='saliente'], option[sentido='saliente']{
+	color:#000;
+    background-color: #c1f270;
+	border-color: #57a532;
+}
+
+select[sentido='entrante'], option[sentido='entrante'] {
+	color:#000;
+ 	background-color: #839ef8;
+	border-color: #272fb6;
+}   	
+
+					
+ 
+<?php
+echo $config["com-text-css"];
+?>
