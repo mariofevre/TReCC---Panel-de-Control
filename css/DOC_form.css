@@ -1,0 +1,209 @@
+
+.formulario > input{
+	line-height:10px;
+	font-size:10px;
+	padding:0;
+	margin:0;
+	height:12px;
+	background-color:transparent;
+	border-width:1px;
+}
+.formulario {
+	font-size:12px;
+}
+
+.formulario > input.largo{
+	width: 151px;
+}
+
+.formulario > input[type='checkbox']{
+	width:5px;
+	position:absolute;
+    left: 161px;
+    top: 1px;			
+}
+.formulario > input[type='image']{
+	position:absolute;
+    left: 161px;
+    top: 14px;		
+    width:auto;
+    height:auto;
+    padding:1px 2px 1px 1px;	
+    border:1px solid silver;
+}		
+
+.formulario > input[type='image']:hover{		
+	 background-color:#08AFD9;
+	 border-color:#000;
+}
+.formulario{
+	position:relative;
+}
+	
+.formulario > div, .formulario > label > div{
+    margin:2px;
+    background-color:#EFEFEF;
+    border-radius:4px;
+    border:1px solid #D0D0D0;
+    overflow:auto;
+    display:inline-block;
+    vertical-align: top;
+    overflow: hidden;
+}
+
+
+.formulario > label {
+   width: 12px;
+}
+
+.formulario > label.largo{
+	width:50px;
+	height:10px;
+}
+.formulario > label.largo >span{
+    padding:0px;
+    height:12px;
+}
+
+.formulario > label.medio{
+	margin: 1px 1px;
+	width: 20px;
+}		
+
+
+label span {
+    text-align:center;
+    display:block;
+    cursor: pointer;
+}
+.formulario > div > span {
+    text-align:center;
+    padding:3px 0px;
+    display:inline-block;
+    cursor: pointer;
+    height:16px;  
+    vertical-align:top; 
+}
+
+
+label span.saliente{
+	background-color:#EAFBCE;
+}
+
+label span.entrante{
+	background-color:#839EF8;
+}
+
+.formulario > input[type='radio'] {
+    display:none;
+}
+
+.formulario > input[checked='checked'] + span{
+    background-color:#666;
+    color:#F7F7F7;
+}
+
+.vacio{
+		background-color:transparent;	
+	}
+
+.formulario > input[checked='checked'] + span.aprobada{
+    background-color:#55BF55;
+    color:#F7F7F7;
+}			
+
+div.formulario{
+	border:1px solid gray;
+	margin:1px;
+	width: 175px;
+}
+
+.formulario div.dia, .formulario > div.mes{
+	width:22px;
+	height:12px;
+	margin:0px;
+}
+.formulario > div.dia > select, div.mes > select{
+	left: -5px;
+	top:-2px;
+	position:relative;
+	background-color:transparent;
+}
+.formulario > div.ano{
+	width:23px;
+	height:12px;
+	margin:0px;
+	
+}
+.formulario > div.ano > select{
+	width:50px;	
+	left: -5px;
+	top:-2px;
+	position:relative;
+	background-color:transparent;
+	overflow:hidden;	
+}
+
+.formulario div.chico{
+	width:90px;
+	height:12px;
+	margin:0px;
+}
+.formulario div.chico > select{
+	width:115px;	
+	left: -5px;
+	top:-2px;
+	position:relative;
+	background-color:transparent;
+	overflow:hidden;
+}
+.formulario div.chicob{
+	width:50px;
+	height:12px;
+	margin:0px;
+}
+.formulario div.chicob > select{
+	width:75px;	
+	left: -5px;
+	top:-2px;
+	position:relative;
+	background-color:transparent;
+	overflow:hidden;
+}
+label{
+	height:20px;
+}
+
+.formCent > div{
+    display: inline-block;
+}
+
+.formCent .auxopcionar .contenido {
+    position: absolute;
+    left: -200px;
+    top: 25px;
+    width: 196px;
+    min-height: 100px;
+    height: auto;
+    overflow: hidden;
+    background-color: lightblue;
+    color: #eefbff;
+    border: 2px solid #000;
+    box-shadow: 4px 4px 8px rgba(0,0,0,0.5);
+}
+
+.formCent .auxopcionar{
+    position:relative;
+    width:0;
+    height:0;
+    display:none;
+    z-index: 100;
+}
+
+.formCent .auxopcionar .contenido >a{
+    display:block;
+}	
+.formCent .auxopcionar .contenido >a[filtrado='si']{
+    display:none;
+}	
+

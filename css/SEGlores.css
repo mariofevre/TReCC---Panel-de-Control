@@ -1,0 +1,21 @@
+		form.central .campo input[name="nombre"] {
+		    width: 280px;
+		}
+
+		form#seguimiento{
+		    left: 0px;
+		    top: 0px;
+		    width: 360px;
+		   height: calc(100vh - 4px);
+	    }
+	    
+	    form#accion{
+		    right: 0px;
+		    top: 0px;
+		    width: 360px;
+		    height: calc(100vh - 4px);
+	    }
+	    
+	    form.central textarea {
+    		width: 335px;
+    	}   

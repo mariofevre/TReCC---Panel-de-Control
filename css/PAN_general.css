@@ -1,0 +1,375 @@
+
+p {
+	margin: 0 10px;
+}
+h1 {
+	margin: 0 10px;
+}
+input.fecha {
+	float: left;
+	width: 40px;
+}
+input.chico {
+	width: 560px;
+}
+
+input{
+	display:inline-block;
+	width:180px;
+}
+label{
+	display:inline-block;
+	width:60px;			
+}
+th {
+	font-size: 12px;
+	text-align: right;
+	width: 340px;
+}
+td {
+	text-align: center;
+	border: solid 1px gray;
+}
+
+iframe{
+	height: 98px;
+	width: 180px;
+	overflow:hidden;
+}
+
+form{
+	margin:2px;
+}
+
+table{
+	border-collapse:collapse;
+}
+
+
+.salva {
+	width: 90px;
+	margin-bottom: 5px;
+	float: left;
+}
+.reporte {
+	width: 200px;
+}
+.marco {
+	border-bottom: 1px solid #EEEEEE;
+	float: none;
+	width: 100%;
+}
+.referencia {
+	font-size: 10px;
+}
+.alerta {
+	background-color: red;
+}
+.similth {
+	background-color: none;
+	width: 800px;
+	text-align: left;
+}
+.fila {
+	display: block;
+	width: 784px;
+	border-top: #CDF0F9 3px solid;
+}
+.contenido {
+	display: inline-block;
+	width: 80px;
+	font-size: 12px;
+	overflow: hidden;
+	height: 30px;
+	text-align: center;
+	line-height: 10px;
+}
+.titulo {
+	display: inline-block;
+	background-color: #DBF7FE;
+	width: 80px;
+	height: 20px;
+	font-size: 11px;
+	margin-right: -7px;
+	text-align: center;
+	overflow: hidden;
+	line-height: 10px;
+}
+.seleccion {
+	width: 20px;
+	font-size: 14px;
+}
+.nombre {
+	width: 160px;
+	font-size: 14px;
+	line-height: 14px;
+}
+.accion {
+	width: 45px;
+	line-height: 12px :
+}
+.aclaracionsubmit {
+	width: 120px;
+	height: 24px;
+	font-size: 12px;
+	font-weight: normal;
+	display: inline-block;
+}
+.tipo {
+	width: 40px;
+}
+.emision, .recepcion {
+	width: 55px;
+}
+.id1 {
+	width: 65px;
+}
+.id2 {
+	width: 55px;
+}
+.responder {
+	width: 20px;
+}
+.contenido.alta {
+	font-size: 10px;
+}
+.contenido.baja {
+	font-size: 10px;
+}
+.cerrada {
+	color: silver;
+}
+.id_p_B_usuarios_usuarios_id_nombre_autor {
+	width: 45px;
+}
+.id_p_B_usuarios_usuarios_id_nombre_responsable {
+	width: 45px;
+}
+.tareas {
+	width: 219px;
+}
+div.tareas > div:hover {
+	width: 235px;
+	height: auto;
+	line-height: 12px;
+	border: 1px solid #CDF0F9;
+	border-bottom: #CDF0F9 3px solid;
+	position: absolute;
+	background-color: #ffffff;
+}
+div.tareas > div > a {
+	display: inline-block;
+	border-bottom: #CDF0F9 1px solid;
+}
+div.tareas > div > a.terminada {
+	color: silver;
+}
+div.descrip {
+	width: 40px;
+	line-height: 14px;
+}
+div.descrip > div:hover {
+	width: 200px;
+	height: 80px;
+	line-height: 12px;
+	border: 1px solid silver;
+	position: absolute;
+	background-color: #ffffff;
+	overflow-y: scroll;
+}
+a.contenido.respuesta > div.id1:hover {
+	width: 100px;
+	height: 40px;
+	line-height: 12px;
+	border: 1px solid silver;
+	position: absolute;
+	background-color: #ffffff;
+	color: #000000;
+}
+.respuesta {
+	width: 195px;
+	display: inline-block;
+}
+.respuesta > div {
+	height: 12px;
+	display: inline-block;
+}
+.contenido.respuesta {
+	height: 10px;
+	text-align: left;
+	margin-top: -2px;
+	line-height: 10px;
+}
+.contenido.respuesta > div {
+	line-height: 12px;
+	margin-right: -3px;
+}
+.accionseleccion {
+	display: default;
+}
+.precontenido.respuesta {
+	height: 10px;
+	text-align: left;
+	margin-top: -2px;
+	line-height: 10px;
+	width: 15px;
+	border: none;
+}
+.contenido.respuesta > .emision, .contenido.respuesta > .recepcion {
+	width: 40px;
+}
+.agrupado {
+	border: none;
+}
+.saliente {
+	background-color: #EAFBCE;
+}
+.entrante {
+	background-color: #E1E7FB;
+}
+.ano{
+	width:40px;
+}
+.mes,.dia{
+	width:20px;
+}
+#contenidoextenso .paquete{
+	cursor:pointer;
+	overflow:visible;
+}		
+.paquete > p{
+	color: #08afd9;			
+	margin:0;
+}
+#columnados > div.paquete:hover{
+	background-color: #08afd9;
+	border:2px solid #000;
+	color:#fff:
+}
+.paquete > a{
+	overflow:visible;
+}
+.paquete .resumen{
+	overflow:visible;
+}
+.paquete .resumen .res1{
+	display:inline-block;
+	width:25px;
+	text-align:right;
+}
+
+.paquete .resumen .restx{
+	display:none;
+	position:absolute;
+	top:0px;
+	left:300px;
+	width:400px;
+	border:2px solid #08afd9;
+	box-shadow: 5px 5px 10px 000;
+	background-color:#fff
+}
+
+table{
+	background-color:#fff;
+}
+.COM{
+	background-color:#fdd;
+}
+
+.DOC{
+	background-color:#ffefd0;
+}
+.HIT{
+	background-color:#fdf;
+}
+.TOT{
+	background-color:#ddd;
+}
+
+.nombreP{
+	font-size:12px;
+}
+
+td > a{
+	display:inline-block;
+	width:100%
+	height:100%
+}
+
+span.antiguedad{
+	font-size:12px;
+	display:inline-block;
+	padding-left:2px;
+	padding-right:2px;
+	border:1px solid #444;
+	border-radius:3px;
+}
+
+span.antiguedad.alerta{
+	font-size:12px;
+	display:inline-block;
+	padding-left:2px;
+	padding-right:2px;
+	border:1px solid red;
+	background-color:pink;
+	border-radius:3px;
+}
+
+#formconfig{
+    width:80vw;
+    height:80vh;
+    position:fixed;
+    left:10vw;
+    top:10vh;
+    border:2px solid #000;
+    box-shadow:5px 5px 10px rgba(0 0 0 0.8);
+    display:none;
+    z-index:20;
+    font-size:12px;
+    background-color:#fff;
+    overflow-y:scroll;
+}
+
+#formconfig h3{
+    display:inline-block;
+    width:180px;
+    vertical-align:top;  
+    margin-top:2px;
+    margin-bottom:20px;
+}
+
+#formconfig .especifico{
+    display:inline-block;
+    vertical-align:top;    
+    border:1px solid #000;
+    width:calc(80vw - 210px);
+    min-height:60px;
+    margin-bottom:10px;
+}
+
+#formconfig label{
+    width:140px;
+    text-align:right;
+    min-height:30px;
+    vertical-align:middle
+}
+
+#formconfig input[type=checkbox]{
+    width:20px;
+}
+
+#formconfig textarea{
+    width:290px;
+    height:300px;
+    font-size:12px;
+    font-family: 'Ropa Sans-local', 'Ropa Sans', sans-serif;	
+    vertical-align:top;
+}
+
+
+#formconfig .botoncerrar{
+    position:absolute;
+    top:10px;
+    right:10px;
+}
+

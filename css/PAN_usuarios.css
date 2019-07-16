@@ -1,0 +1,205 @@
+@font-face {
+  font-family: 'verdana';
+  font-style: normal;
+  font-weight: normal;
+  src: local('verdana'), url('verdana.TTF') format('truetype');
+}
+form{
+	margin:0;
+	width:400px;
+	display:inline-block;
+}
+
+form > div{
+	display:inline-block;
+}		
+
+p{
+margin:0 10px;
+}
+
+h1{
+margin:0 10px;
+}
+
+input.fecha{
+float:left;
+width:40px;		
+}		
+
+input.chico{
+width:560px;
+}		
+
+input.mini{
+float:left;
+width:25px;
+}		
+
+select{
+font-family: 'Ropa Sans-local','Ropa Sans',sans-serif;
+}		
+
+select.chico{
+width:100px;
+font-family: 'Ropa Sans-local','Ropa Sans',sans-serif;
+}			
+	
+th{
+font-size:12px;
+text-align:right;
+background-color:#DBF7FE;
+width:100px;
+}
+
+td{
+text-align:center;
+border:solid 1px gray;
+}
+
+.salva{
+width:90px;
+margin-bottom:5px;
+float:left;
+}
+
+.reporte{
+width:200px;
+}
+
+.marco{
+border-bottom: 1px solid #EEEEEE;
+float: none;
+width: 100%;		
+}
+
+.referencia{
+font-size: 10px;
+}
+
+.alerta{
+background-color:red;
+}
+
+.similth{
+background-color:none;
+width:800px;
+text-align:left;
+}	
+
+.fila{
+	display:block;
+	width:784px;
+	border-top:#CDF0F9 3px solid;
+}
+
+.contenido{
+	display:inline-block;
+	width:80px;
+	font-size:12px;
+	overflow:hidden;
+	height:30px;
+	text-align:center;
+	line-height:10px;
+}		
+.titulo{
+	display:inline-block;
+	background-color:#DBF7FE;
+	width:80px;
+	height:20px;
+	font-size:11px;	
+	margin-right: -7px;		
+	text-align:center;
+	overflow:hidden;
+	line-height:10px;
+}			
+.seleccion{
+	width:20px;
+	font-size:14px;	
+}		
+.nombre{
+	width:160px;
+	font-size:14px;	
+	line-height:14px;
+}
+.accion{
+	width:45px;
+	line-height:12px:
+}		
+
+.aclaracionsubmit{
+	width:120px;
+	height:24px;
+	font-size:12px;
+	font-weight:normal;
+	display:inline-block;
+}
+
+.tipo{
+	width:40px;
+}
+
+.emision, .recepcion{
+	width:55px;
+}			
+
+.id1{
+	width:65px;
+}	
+.id2{
+	width:55px;
+}			
+
+.responder{
+	width:20px;
+}					
+
+.contenido.alta{
+	font-size:10px;
+}
+.contenido.baja{
+	font-size:10px;
+}		
+
+.cerrada{
+	color:silver;
+}
+
+.id_p_B_usuarios_usuarios_id_nombre_autor{
+	width:45px;
+}	
+.id_p_B_usuarios_usuarios_id_nombre_responsable{
+	width:45px;
+}		
+	
+.tareas{
+	width:219px;
+}		
+
+div.tareas > div:hover{
+	width:235px;
+	height:auto;
+	line-height:12px;
+	border: 1px solid #CDF0F9;
+	border-bottom:#CDF0F9 3px solid;
+	position: absolute;
+	background-color: #ffffff;
+}	
+div.tareas > div > a{
+	display:inline-block;
+	border-bottom:#CDF0F9 1px solid;
+}			
+
+div.tareas > div > a.terminada{
+	color:silver;
+}	
+
+div.nombre{
+	display:inline-block;
+	width:100px;
+}
+
+#contenidoextenso > .paquete > div{
+	width:300px;
+}
+		

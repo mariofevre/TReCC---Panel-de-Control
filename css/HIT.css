@@ -202,27 +202,6 @@ button{
 }	
 		
   
-@media print {
-	#encabezado{
-	visibility: hidden;
-	position:absolute;
-	}
-	body{
-		background-image:none;
-	}
-	#contenidoextenso{
-		overflow:hidden;
-		width:717px;
-	}		
-	#page{
-		width:717px;
-	}			
-	
-	#pageborde{
-		margin:0px;
-		width:734px;
-	} 
-}
 
 #tipo{
 	display:inline-block;
@@ -237,7 +216,7 @@ button{
 	
 .nombre{
 	display:inline-block;
-	width:390px;
+	width:420px;
 	font-size:14px;
 }
 
@@ -245,9 +224,10 @@ button{
 	display:inline-block;
 	width:20px;
 	text-align:center;
-    font-size: 11px;
+    font-size: 10px;
     line-height: 10px;
     overflow:hidden;
+	white-space: nowrap;
 }	
 	
 	
@@ -260,7 +240,7 @@ button{
 
 .opcion{
 	display:inline-block;
-	width:80px;
+	width:60px;
     font-size: 11px;
     line-height: 10px;
 }
@@ -281,9 +261,10 @@ button{
 
 .fecha{
 	display:inline-block;
-	width:120px;
+	width:100px;
 	font-size:14px;
 	font-weight:bold;
+    text-align: center;
 }		
 
 .escala{
@@ -302,6 +283,13 @@ button{
 	font-size:10px;
 	text-align:center;
 }	
+
+.formula{
+	display:inline-block;
+	width:11px;
+	font-size:10px;
+	text-align:center;
+}
 
 .versiones{
 	display:inline-block;
@@ -355,3 +343,235 @@ button{
     border-color: #cdf7cd #008000 #008000 #cdf7cd;
 }
 
+
+.auxopcionar{
+    position:relative;
+    width:0;
+    height:0;
+    display:none;
+    z-index: 100;
+}
+
+.auxopcionar .contenido{
+    position:absolute;
+    left:-200px;
+    top:25px;
+    width:196px;
+    min-height:100px;
+    height:auto;
+    
+    overflow:hidden;
+    background-color:lightblue;
+    color:#eefbff;
+    border:2px solid #000;
+    box-shadow: 4px 4px 8px rgba(0,0,0,0.5);
+}
+.auxopcionar .contenido >a{
+    display:block;
+}		
+
+form .fecha{
+	position:relative;
+	display:inline-block;
+	background:pink;
+	font-weight:normal;
+	font-size:10px;
+	border:1px solid red;
+	height:10px;
+	vertical-align: top;
+	white-space: nowrap;
+	cursor:pointer;
+}
+
+form .fecha[tipo="prevista"]{
+	background-color:orange;
+}
+form .fecha[tipo="efectiva"]{
+	background-color:blue;
+	border:1px solid #000;
+}
+
+form .fecha[tipo="efectiva"]:hover, form .fecha[tipo="prevista"]:hover{
+	background-color:red;
+}
+
+form .fecha[superada="1"]{
+	opacity:0.5;
+}
+
+form .fecha div{
+	top:-12px;
+	background-color:#ddd;
+	border:1px solid #444;
+	position:absolute;
+	width:47px;	
+}
+form .fecha div.desde{
+	left:-50px;	
+}
+form .fecha div.hasta{
+	right:-50px;	
+}
+
+form .fecha div.objetivo{
+	top:-2px;
+	background-color:blue;
+	border:1px solid #fff;
+	position:absolute;
+	width:2px;
+	height:2px;		
+	box-shadow:1px 1px #000;
+	text-shadow: 1px 1px #000;	
+	color:#fff;
+				
+}
+form .fecha[tipo="efectiva"] div.objetivo{
+	background-color:blue;
+}
+form .fecha[tipo="prevista"] div.objetivo{
+	background-color:orange;
+}	
+
+
+form#general > div{
+    display:inline-block;
+}
+form#general > div#opprevision{
+    display:none;
+    text-align:center;
+}	
+form#general > div#opformula, form#general > div#opmanual{
+    display:none;
+    text-align:center;
+}
+form#general > div#opformula label, form#general > div#opmanual label{
+    text-align:center;
+}
+form#general input#nuevafecha{
+    font-size:16px;
+    display:inline-block;
+}
+form#general div#opnuevafecha{
+    text-align:center;
+    padding:0px 15px;
+}
+form#general div#opnuevafecha label{
+    text-align:center;
+}
+
+form .calendario{
+	height: 100%;
+	width:100%;
+	background-color: rgba(255,255,255,0.8);	
+	position: absolute;	
+	top: 30px;
+	z-index: -1;
+}
+form .calendario .mes{
+	display:inline-block;
+	border:1px solid #000;
+	border-right:none;
+	border-left-style: dotted;
+	vertical-align:bottom;	
+	background-color:rgba(255,255,255,0.8);
+}
+form .calendario .mes .alinea{
+	height:100%;
+	display:inline-block;
+	width:0px;
+	vertical-align:bottom;
+	white-space: auto;
+}
+form .calendario .mes .tx{
+	display:inline-block;
+	white-space: normal;
+}
+
+
+
+
+#formcent #etiqueta_validodesde{
+    display:none;
+}
+#formcent #cfecha_validodesde_a{
+    display:none;
+}
+#formcent #cfecha_validodesde_m{
+    display:none;
+}
+#formcent #cfecha_validodesde_d{
+    display:none;
+}
+
+
+
+form#nuevafecha a.confirmar{
+    background-color:rgb(150,255,100);
+}
+form#nuevafecha #historial{
+	position:relative;
+	width:calc(100% - 130px);
+	margin-left:50px;
+	white-space: nowrap;
+	display:none;
+	top: -20px;
+}
+
+form#nuevafecha .barrafecha{
+	position:relative;
+	width: calc(100% - 130px);
+	margin-left: 50px;
+	height:60px;
+	display:none;
+	z-index: 20;
+}
+
+
+
+form#nuevafecha .inputfecha{
+	position:absolute;
+	top:0px;
+	width:100px;
+	border-radius:10px;
+	border-bottom-right-radius: 0;
+	border:1px solid  #000;
+	background-color:#fff;
+}
+
+form#nuevafecha .inputfecha input{
+	margin: 5px;
+	font-size:10px;
+	margin-top:0px;
+}
+
+form#nuevafecha .inputfecha label{
+	margin:5px;
+	height:30px;
+	width:90px;
+	margin-bottom:0px;
+}
+
+
+
+
+@media print {
+	#encabezado{
+	visibility: hidden;
+	position:absolute;
+	}
+	body{
+		background-image:none;
+	}
+	#contenidoextenso{
+		overflow:hidden;
+		width:717px;
+	}		
+	#page{
+		width:717px;
+	}			
+	
+	#pageborde{
+		margin:0px;
+		width:734px;
+	} 
+}

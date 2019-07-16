@@ -356,24 +356,17 @@
 	.ficha{
 		display:block;
 		background-color:#fff;
-		border:1px solid #000;
-		width:650px;
-		height:500px;
 		font-size:12px;
 		position:relative;
 		margin-bottom:2px;
-	}
-
-	.ficha{
 		width:651px;
-		height:800px;
 		border:2px solid #000;
 	}
 	
 	.ficha .encabezado{
 		display:inline-block;
 		width:350px;
-		height:300px;
+		min-height:350px;
 		border-right:1px solid #000;
 		vertical-align:top;
 	}
@@ -385,7 +378,7 @@
 		border-left:1px solid #000;
 		border-bottom:1px solid #000;		
 		vertical-align:top;
-		font-size:40px;
+		font-size: 35px;
 		text-align:center;
 		
 	}	
@@ -413,17 +406,18 @@
 		height:80px;
 	}	
 	.ficha .n1{
-		height: 40px;
+		height: 39px;
 		font-size:14px;
 		border-bottom:1px solid #000;
 		line-height: 13px;
+		position: relative;
 	}		
 	.ficha .titulo{
 		font-size:11px;
 	}		
 	.ficha .n2{
 		font-size:14px;
-		height: 40px;
+		height: 39px;
 		line-height: 13px;
 		position:relative;
 		padding-right: 15px;
@@ -444,7 +438,11 @@
 		border-bottom:1px solid #000;
 		height:40px;
 		vertical-align:middle;
+		position:relative;
 	}	
+	.ficha .nombre .color{
+	width: 35px;
+	}
 	.ficha .nombre .tx{
 		text-align:center;
 		font-size:16px;
@@ -598,7 +596,7 @@ div.VIN.superior{
 		width: 50%;
 	}
 	
-	.nivel1{
+	.PLAn1{
 		width:784px;
 		min-height:50px;
 		display:block;
@@ -606,7 +604,7 @@ div.VIN.superior{
 		background-color:#fff;
 	}
 
-	.nivel2{
+	.PLAn2{
 		width:584px;
 		min-height:50px;
 		display:inline-block;
@@ -615,7 +613,7 @@ div.VIN.superior{
 		margin:1px;
 	}  
 
-	.nivel3{
+	.PLAn3{
 		width:384px;
 		min-height:50px;
 		display:inline-block;
@@ -624,7 +622,13 @@ div.VIN.superior{
 		margin:1px;
 	}  
 	
-	.nivel1 .encabezado{
+	
+	.encabezado:hover{
+		color: #000;
+		background-color: #08afd9;
+	}
+	
+	.PLAn1 .encabezado{
 		width:194px;
 		display:inline-block;
 		min-height:50px;
@@ -632,7 +636,7 @@ div.VIN.superior{
 		vertical-align:top;
 	}
 
-	.nivel3 .imagen{
+	.PLAn3 .imagen{
 		height:50px;
 	}
 	
@@ -642,19 +646,19 @@ div.VIN.superior{
 		vertical-align:top;
 	}
 
-	.nivel1 > .contenidos{
+	.PLAn1 > .contenidos{
 		width:194px;
 	}	
 
-	.nivel2 > .contenidos{
+	.PLAn2 > .contenidos{
 		width:384px;
 	}
 
-	.nivel3 .contenidos{
+	.PLAn3 .contenidos{
 
 	}
 	
-	.nivel3>.encabezado{
+	.PLAn3>.encabezado{
 		width:100%;
 	}	
 	
@@ -721,3 +725,297 @@ div.VIN.superior{
 		 	display:none;
 		 } 
 	} 
+
+
+
+/* FORMULARIO PLAN */
+
+#form_pla{
+	display:none;
+	width:90vw;
+	height:90vh;
+	position:fixed;
+	left:5vw;
+	top:5vh; 
+	border: 2px solid #08afd9;
+    box-shadow: 5px 5px 3px rgba(0, 0, 0, 0.2);
+    z-index:10;
+    background-color:#fff;
+    overflow-y: auto;
+    cursor:move;
+}
+
+
+#form_pla select{
+	width:100%;
+	height:16px;
+}
+
+#form_pla input, select{
+	background:#ffffff;
+	font-family:'Ropa Sans-local';
+	font-size:12px;
+	color:#08AFD9;
+	margin:0;
+	vertical-align: text-bottom;
+}
+#form_pla label{
+	vertical-align: text-bottom;
+	height:auto;
+}
+
+h1{
+	margin:0 10px;
+}
+
+h2, h3{
+	margin:2px 0 0 0;
+}		
+
+h1, h2{
+	width:auto;
+}
+		
+h3{	
+	font-size:10px;
+	font-weight:normal;	
+}
+
+input.fecha{
+	float:none;
+	width:40px;		
+}		
+
+input.chico{
+	width:100%;
+}		
+
+input.mini{
+float:none;
+	width:25px;
+}		
+
+select.chico{
+	width:100px;
+}			
+
+
+#form_pla input[type="button"]{
+	position:relative;
+}
+ 
+#form_pla input[type="submit"]{
+    font-size: 9px;
+    height: 17px;
+    line-height: 8px;
+    padding: 0;
+    width: 40px;
+    position:absolute;
+    top:35px;
+    right:5px;
+}
+
+
+#form_pla input[type="submit"].general{
+    font-size: 13px;
+    height: 20px;
+    line-height: 13px;
+    width: 60px;
+    position:absolute;
+    top:35px;
+    right:5px;
+}	
+
+#form_pla .eliminacion{
+    position:fixed;
+    top:105px;
+    left:650px;
+    width:50;
+    height:50px;
+}	
+
+
+#form_pla input.cancela{
+    position:absolute;
+    top:5px;
+    right:5px;
+    font-size: 13px;
+    line-height: 13px;
+    width: 60px;
+    height: 20px;
+    line-height: 13px;
+}			
+#form_pla input.imprimir{
+    position:absolute;
+    top:65px;
+    right:5px;
+    font-size: 13px;
+    line-height: 13px;
+    width: 60px;
+    height: 20px;
+    line-height: 13px;
+}		
+#form_pla input.eliminar{
+    position: absolute;
+    top:90px;
+    right:5px;
+    font-size: 11px;
+    line-height: 13px;
+    width: 60px;
+    height: 15px;
+    line-height: 13px;
+	background-color:red;
+	color:#555;
+	font-weight:bold;
+}
+#form_pla input[type="radio"]{
+    vertical-align:middle;
+}
+
+	
+#form_pla input[readonly='readonly']{	
+	background-color:lightblue;		
+	height:4px;
+}
+
+#form_pla  input[disabled='disabled']{	
+	background-color:lightblue;		
+	height:4px;
+}
+
+ 
+#form_pla input[type="radio"]{
+	display:inline-block;	
+}	
+
+#form_pla .dragborde.izquierdo {
+    position: absolute;
+    left: -4px;
+    top: 0;
+    bottom: 0;
+    width: 12px;
+    cursor: w-resize;
+    background-color: lightblue;
+    z-index: 20;
+    height: 100%;
+}
+
+		
+		
+#adjuntos a{
+	border: medium none;
+    color: #e41937;
+    cursor: pointer;
+    display: inline-block;
+    text-decoration: none;
+    width: 160px;
+	max-height: 27px;
+ 	overflow: hidden;
+ 	vertical-align:middle;
+}
+#adjuntos input[type='text']{
+	width: 110px;
+	vertical-align:middle;
+}
+#adjuntos input[type='button']{
+	width: 15px;
+	vertical-align:middle;
+	background-color:#fff;
+}
+#adjuntos input[type='button']:hover{
+	background-color:#faa;
+	font-weight:bold;
+}
+#adjuntos input[type='button'].recuperar{
+	display:none;
+	color:#000;
+	font-weight:bold;
+	background-color:#f00;
+}
+#adjuntos input[type='button'].recuperar:hover{
+	background-color:#0f0;	
+}
+
+#adjuntoslista{
+	margin-top:10px;
+}
+#adjuntoslista h3[eliminar='si'] a{
+	text-decoration: line-through;
+}
+
+#uploader div{
+    border-bottom: 1px solid lightblue;
+    height: auto;
+    margin-top: 2px;
+    width: 123px;
+}
+
+#uploader{
+	position:absolute;
+	right: 2px;
+	top:0px;
+}
+#contenedorlienzo{
+	vertical-align:top;
+	display:block;
+	position:relative;
+	box-shadow:2px 2px 5px 2px rgba(0,0,0,0.5) inset;
+}
+
+
+#editorArchivos #contenedorlienzo{
+	height:60px;
+}
+
+.botoncerrar{
+	position:absolute;
+	right:1vw;
+	top:1vh;
+}
+
+#listadosubiendo > p{
+	display:block;
+	border:1px solid #999;
+	margin:1px;
+	color:#444;
+	background-color:#ccc;
+	height:15px;
+	white-space: nowrap;
+}
+
+#contenedorlienzo #lienzo{
+	vertical-align:top;
+	display:inline-block;
+	position:relative;
+	border:2px solid #aaa;
+}
+#contenedorlienzo #upload{		
+	position:absolute;
+	display:inline-block;
+	border:0px solid #aaa;
+	position:relative;
+	height:100%;
+	width:100%;
+}
+
+#contenedorlienzo #upload label{
+	height:calc(100% - 4px);
+	width:100%;
+	font-size:14px;
+	color:#999;
+	margin:0px;
+	text-align:center;
+	line-height:13px;
+	display: inline-block;
+}
+	
+#contenedorlienzo #uploadinput{
+	opacity:0;
+	height:100%;
+	width:100%;
+	position:absolute;
+	top:0;
+	left:0;
+	display:inline-block;
+}
+		

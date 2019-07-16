@@ -1,4 +1,26 @@
 
+#cajalog{
+	display:block;
+	position:fixed;
+	width:50vw;
+	height:80vh;
+	top:10vh;
+	left:25vw;
+	border:3px solid #000;
+	background-color:#fff;
+	box-shadow:10px 10px 20px rgba(0,0,0,1);
+	z-index:100000;
+	font-size: 5vh;
+	text-align: center;
+}
+#cajalog input{
+	font-size: 5vh;
+	height:6vh;
+}
+#cajalog label{
+	display:block;
+}
+
 @font-face {
   font-family: 'Ropa Sans-local';
   font-style: normal;
@@ -480,8 +502,8 @@ div.ventanadesarrollo{
 #recuadro4{
 	position:fixed;
 	width:180px;
-	top:160px;
-	left:0px;
+	top:120px;
+	left:2px;
 	height:120px;
 	background-color:#fff;
 	border:1px solid lightblue;
@@ -491,8 +513,8 @@ div.ventanadesarrollo{
 #recuadro5{
 	position:fixed;
 	width:180px;
-	top:300px;
-	left:0px;
+	top:240px;
+	left:2px;
 	height:320px;
 	background-color:#fff;
 	border:1px solid lightblue;
@@ -534,7 +556,58 @@ div.ventanadesarrollo{
 }	
 	
 
+.botonerainicial {
+    margin: 10px;
+    font-size: 15px;
+}
+.botonerainicial a.botonmenu {
+    padding: 0px 3px;
+    border: 1px solid #08afd9;
+    border-radius: 2px;
+    background-color: #fff;
+    box-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+}
+.botonerainicial[tipo='acciones'] a.botonmenu {
+    height:16px;
+    display:inline-block;
+    vertical-align: middle;
+    line-height: 15px;
+}
+.botonerainicial[tipo='acciones'] a.botonmenu img{
+	position: relative;
+    vertical-align: middle;
+}
+ #page > #buscador{
+	   	
+   	float:right;
+   	border:1px solid #bbb;
+   	width:300px;
+   	height:30px;
+   	position:relative;
+   	margin-right:20px;
+   	margin-top:20px;
+   	background-color:#fff;
+   	border-radius:5px;
+   	box-shadow:2px 2px 5px rgba(0,0,0,0.5);
+   	text-align:center;
+  }
+  
+   #page > #buscador > label{
+	   	position:absolute;
+	   	top:-15px;
+	   	left:1px;
+	   	font-size:10px;
+   }
+    #page > #buscador > input{
+	   	width:calc(100% - 5px);
+	   	margin-top: 3px;
+		font-size: 14px;
+		background-color: #fff;
+		border: none;
+		height: 24px;
+		text-align: center;
 
+   }
 #contenidoextenso div.antig{
 	position:absolute;
 	display:block;
@@ -547,6 +620,8 @@ div.ventanadesarrollo{
 	border:none;
 }
 	
+
+
 
 
 @media print{
@@ -575,5 +650,7 @@ div.ventanadesarrollo{
 	#page{
 		margin:1px;
 	}
-	
+	.botonerainicial{
+		display:none;
+	}
 }
