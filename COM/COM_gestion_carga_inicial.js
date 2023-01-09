@@ -27,7 +27,7 @@
 
 function consultarConfig(){				
     var parametros = {
-            "panid" : _PanId,
+            "panid" : _PanelI,
     };
 
     //Llamamos a los puntos de la actividad
@@ -37,18 +37,25 @@ function consultarConfig(){
         type:  'post',
         success:  function (response){
             _res = PreprocesarRespuesta(response);
-            _DataConfig=_res.data.config;
+            _Config=_res.data.config;
             _DataPreferencias=_res.data.pref;
             
-            cargarFiltro();
-            
+            document.querySelector('#form_com .paquete.identificacion option[sentido="saliente"]').innerHTML=_Config['com-sale'];
+			document.querySelector('#form_com .paquete.identificacion option[sentido="entrante"]').innerHTML=_Config['com-entra'];
+			document.querySelector('#form_com [innerhtml_config="com-ident"]').innerHTML=_Config['com-ident'];
+			document.querySelector('#form_com [innerhtml_config="com-identdos"]').innerHTML=_Config['com-identdos'];	
+			document.querySelector('#form_com [innerhtml_config="com-identtres"]').innerHTML=_Config['com-identtres'];	
+
+
+            cargarFiltro();            
         }
     });
 }
 
 function cargarFiltro(){
     var parametros = {
-    	'comunicaciones':''
+    	'comunicaciones':'',
+    	"panid" : _PanelI,
     };			
     $.ajax({
         data:  parametros,
@@ -74,7 +81,7 @@ function cargarFiltro(){
 	            	if(_ops[_on].value==_DataPreferencias.COMfsentido){
 	            		_ops[_on].cheked=true;
 	            		_ops[_on].setAttribute('checked','checked');
-	            		console.log(_ops[_on]);
+	            		//console.log(_ops[_on]);
 	            	}else{
 	            		_ops[_on].removeAttribute('checked');
 	            	}
@@ -88,7 +95,7 @@ function cargarFiltro(){
 	            	if(_ops[_on].value==_DataPreferencias.COMfabiertas){
 	            		_ops[_on].cheked=true;
 	            		_ops[_on].setAttribute('checked','checked');
-	            		console.log(_ops[_on]);
+	            		//console.log(_ops[_on]);
 	            	}else{
 	            		_ops[_on].removeAttribute('checked');
 	            	}
@@ -103,7 +110,7 @@ function cargarFiltro(){
 	            		_ops[_on].checked=true;
 	            		_ops[_on].setAttribute('checked','checked');
 	            		_ops[_on].setAttribute('selected','selected');
-	            		console.log(_ops[_on]);
+	            		//console.log(_ops[_on]);
 	            	}else{
 	            		_ops[_on].removeAttribute('checked');
 	            	}
@@ -138,7 +145,6 @@ function cargarFiltro(){
                     }else{
                     	_inT.setAttribute('checked','checked');	                    	
                     }
-                    
                     
                     _ll.appendChild(_inT);
                     
@@ -219,7 +225,6 @@ function cargarFiltro(){
                         _op.innerHTML=_gdat.nombre;                        
                         _ss.appendChild(_op);
                     }                                    
-
                 }
 
 
@@ -316,17 +321,14 @@ function cargarFiltro(){
 	                    		_op.setAttribute('checked','checked');
 	                    		_op.setAttribute('selected','selected');
 	                    	}
-	                    }
-	                    
+	                    }   
                     }                                                    
                 }
             }
             
-            
             _form = document.querySelector('#formfiltro');
 		    _filtro.busqueda=_form.querySelector('input[name="busqueda"]').value;
-		    
-		    
+		   
 		    
 		    if(_form.querySelector('input[name="sentido"]:checked')==null){
 		    	_form.querySelector('input[name="sentido"]').checked=true;
@@ -361,6 +363,7 @@ function cargarFilas(){
     document.querySelector('#contenidoextenso #comunicaciones').innerHTML='';
     _estadodecarga='cargando';			
     var parametros = {
+		"panid" : _PanelI,
         "avance" : 'inicial',
         "BUSQUEDA" : _filtro.busqueda,				
         "SENTIDO" : _filtro.sentido,
@@ -429,7 +432,8 @@ function cargarFilas(){
 
 function cargarUnaFila(_id){						
     var parametros = {
-        "id" : _id
+        "id" : _id,
+        "panid" : _PanelI
     };			
     $.ajax({
         data:  parametros,
@@ -462,7 +466,8 @@ function cargarUnaFila(_id){
 }
 function actualizarUnaFila(_id){						
     var parametros = {
-        "id" : _id
+        "id" : _id,
+        "panid" : _PanelI
     };			
     _cargandofila=document.createElement('div');
     _cargandofila.setAttribute('class','cargando');
@@ -505,7 +510,8 @@ function continuarcarga(_cod){
     _avanceCod=_cod;		
     _parametros = {
         "codigo" : _avanceCod,
-        'algo' : 'prueba'
+        'algo' : 'prueba',
+        "panid" : _PanelI
     };
 
     $.ajax({
@@ -663,7 +669,7 @@ function generarFila(_reg,_modo){
     		_a.innerHTML='<img src="./img/linkeado_no.png">';
     		
     	}
-    	
+    	 
     }
     
     if(_reg.idga==undefined){
@@ -687,6 +693,13 @@ function generarFila(_reg,_modo){
     _modF.setAttribute('sentido',_reg.sentido);
     _modF.setAttribute('pnom',_reg.falsonombre);
 
+	_modF.setAttribute('largo',_reg.largo);
+	if(_reg.largo>50000){
+		_modF.setAttribute('alerta','largo');
+		_modF.title+='Esta comunicación tiene un texto muy largo, verificar si contiene codigo basura';
+		_modF.querySelector('#nom').title+='Esta comunicación tiene un texto muy largo, verificar si contiene codigo basura';
+	}
+	
     if(_reg.hfila>0){
         //_modF.setAttribute('style','height:'+_reg.hfila+'px;');
     }
@@ -702,20 +715,25 @@ function generarFila(_reg,_modo){
         _modOrig.childNodes[0].setAttribute('pnom',_reg.origenes[_idorig].falsonombre);
         _modOrig.childNodes[0].setAttribute('sentido',_reg.origenes[_idorig].sentido);
         _modOrig.childNodes[0].setAttribute('estado',_reg.origenes[_idorig].estado);
-            _modOrig.childNodes[0].innerHTML=_reg.origenes[_idorig].falsonombre;
-            _modF.childNodes[1].appendChild(_modOrig);
-        }
+		_modOrig.childNodes[0].innerHTML=_reg.origenes[_idorig].falsonombre;
+		_modF.childNodes[1].appendChild(_modOrig);
+	}
 
-        _altOri=_modF.childNodes[1].clientHeight;
-        
+	_altOri=_modF.childNodes[1].clientHeight;
+
+	_gacod=_Grupos.grupos[_reg.idga].codigo;
+	if(_gacod==''){_gacod=_Grupos.grupos[_reg.idga].nombre;}
+	_modF.querySelector('#grupo').innerHTML=_gacod;
    
-        _gacod=_Grupos.grupos[_reg.idga].codigo;
-        if(_gacod==''){_gacod=_Grupos.grupos[_reg.idga].nombre;}
-    _modF.querySelector('#grupo').innerHTML=_gacod;
-    
 
+    if(_Grupos.grupos[_reg.idgb]==undefined){
+		console.log('grupo no definido id:'+_reg.idgb+' para comunicacion id:'+_reg.id);
+		_reg.idgb=0;
+	}
     _gbcod=_Grupos.grupos[_reg.idgb].codigo;
-    if(_gbcod==''){_gbcod=_Grupos.grupos[_reg.idgb].nombre;}
+    if(_gbcod==''){
+		_gbcod=_Grupos.grupos[_reg.idgb].nombre;
+	}
     _modF.querySelector('#grupo2').innerHTML=_gbcod;	
    	
     //console.log(_reg.fechaobjetivo +'<'+ _Hoy +'&&'+ _reg.cerrado+'=='+'no'+ '&&'+ _reg.requerimiento +'=='+'si');

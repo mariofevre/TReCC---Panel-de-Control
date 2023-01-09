@@ -119,6 +119,7 @@ function edicionCss(){
 	function edicionHTML(){
 		_textarea=document.querySelector('#editorFormato textarea[name="HTML"]');		
 		_editor = tinymce.get('editorHTML'); // use your own editor id here - equals the id of your textarea
+		console.log(_editor.getContainer());
 			
 		_styleviejo=document.querySelector('#cssPersonalizado');
 		_styleviejo.parentNode.removeChild(_styleviejo);
@@ -138,15 +139,15 @@ function edicionCss(){
 		if(_textarea.getAttribute('estado')=='apagado'){
 			document.querySelector('#editorFormato #guardahtml').setAttribute('estado','encendido');
 			document.querySelector('#editorFormato #cancelahtml').setAttribute('estado','encendido');
-			_textarea.setAttribute('estado','encendido');	
-			document.querySelector('#mceu_14').setAttribute('estado','encendido');	
+			_textarea.setAttribute('estado','encendido');				
+			_editor.getContainer().setAttribute('estado','encendido');	
 			_editor.setContent(_Data.comunicacion.encabezadoHTML);	
 					
 		}else{	
 			document.querySelector('#editorFormato #guardahtml').setAttribute('estado','apagado');
 			document.querySelector('#editorFormato #cancelahtml').setAttribute('estado','apagado');
 			_textarea.setAttribute('estado','apagado');
-			document.querySelector('#mceu_14').setAttribute('estado','apagado');	
+			_editor.getContainer().setAttribute('estado','apagado');	
 			_editor.setContent('');
 		}
 	}
@@ -201,14 +202,18 @@ function edicionCss(){
 			document.querySelector('#editorFormato #guardahtmlpie').setAttribute('estado','encendido');
 			document.querySelector('#editorFormato #cancelahtmlpie').setAttribute('estado','encendido');
 			_textarea.setAttribute('estado','encendido');	
-			document.querySelector('#mceu_42').setAttribute('estado','encendido');	
+			_ns=_textarea.nextSibling;	
+			if(_ns.tagName!='DIV'){_ns=_ns.nextSibling;}
+			_ns.setAttribute('estado','encendido');	
 			_editor.setContent(_Data.comunicacion.pieHTML);	
 					
 		}else{	
 			document.querySelector('#editorFormato #guardahtmlpie').setAttribute('estado','apagado');
 			document.querySelector('#editorFormato #cancelahtmlpie').setAttribute('estado','apagado');
 			_textarea.setAttribute('estado','apagado');
-			document.querySelector('#mceu_42').setAttribute('estado','apagado');	
+			_ns=_textarea.nextSibling;	
+			if(_ns.tagName!='DIV'){_ns=_ns.nextSibling;}
+			_ns.setAttribute('estado','apagado');	
 			_editor.setContent('');
 		}
 	}

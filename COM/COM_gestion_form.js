@@ -30,9 +30,9 @@ $('head').append('<link rel="stylesheet" type="text/css" href="./COM/COM_form_co
 	  	menubar: false,
 	  	width : "616px",
 		height : "280px",
-	  	plugins: "code table image imagetools",
+	  	plugins: "code table image imagetools lists",
 	   	format: { title: 'Format', items: 'bold italic underline strikethrough superscript subscript codeformat | formats blockformats fontformats fontsizes align | forecolor backcolor | removeformat' },
-	  	toolbar: "undo redo |   bold italic |alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | table |  styleselect | code ",
+	  	toolbar: "undo redo |   bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | table |  styleselect | code ",
 	  	forced_root_block: "p",
 		remove_trailing_nbsp : true,
 		editor_deselector : "mceNoEditor",
@@ -78,7 +78,7 @@ $('head').append('<link rel="stylesheet" type="text/css" href="./COM/COM_form_co
 	            _event.keyCode == '39'//presionó  direccional
 	            || 
 	            _event.keyCode == '40'//presionó  direccional		  
-	            || 
+				|| 
 	            _event.keyCode == undefined//presionó accion disparada sin tecleo		  
 	            		
 	    ){
@@ -245,9 +245,9 @@ function iraCom(_event,_id,_idrespuesta,_tipo){
 					if(_s=='entrante'){_scod='entra';}
 					if(_s=='saliente'){_scod='sale';}					
 					
-					if(_DataConfig['com-'+_scod+'-ident-formato']!=''){
+					if(_Config['com-'+_scod+'-ident-formato']!=''){
 					
-						_arr=_DataConfig['com-'+_scod+'-ident-formato'].split("");
+						_arr=_Config['com-'+_scod+'-ident-formato'].split("");
 						_stat='buscafunc';
 						_var='';
 						for(_c in _arr){	
@@ -489,8 +489,7 @@ function iraCom(_event,_id,_idrespuesta,_tipo){
 								_i=parseInt(_i);	
 								console.log(_i+' mas '+_maxi[_d.sentido][_n]);					
 								_maxi[_d.sentido][_n]=Math.max(_maxi[_d.sentido][_n], _i);
-							}
-							
+							}							
 						}
 							
 					}else{
@@ -1278,7 +1277,7 @@ function guardarCom(_this,_modo){
 		_param.preliminar="oficial";
 	}
 			
-	_innn=document.querySelectorAll('#form_com input');
+	_innn=document.querySelectorAll('#form_com input, #form_com select');
 	
 	for(_nin in _innn){
 		if(typeof _innn[_nin] != 'object'){continue;}
@@ -1768,6 +1767,8 @@ function desEliminarAdjunto(_this){
 	_this.parentNode.querySelector('#eliminar').value='si';
 	_this.parentNode.querySelector('.eliminar').style.display='inline-block';
 }
+
+
 
 function togleCerr(_this){
 	_img=_this.querySelector('img[visible="si"]');

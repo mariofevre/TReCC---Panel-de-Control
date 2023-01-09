@@ -201,81 +201,84 @@ function filtrarFilas(){
 	for(_idcom in _ComunicacionesCargadas){
 		
 		_fila=document.querySelector('#comunicaciones .fila#fnc'+_idcom);
-		
-		
-		if(_FiltroVisibles.busqueda_act=='si'){
-			if(Object.keys(_FiltroVisibles.busqueda).length>0){
-				
-				//alert(_idcom);
-				//console.log(_FiltroVisibles.busqueda[_idcom]);				
-				if(_FiltroVisibles.busqueda[_idcom]!=undefined){	
-					//alert(_idcom);
-					//_FiltroVisibles.busqueda[_idcom]					
-					_fila.setAttribute('filtroB',"siver");
-				}else{
-					_fila.setAttribute('filtroB',"nover");
+		if(_fila==null){
+				console.log('Att: com id:'+_idcom+' no se encontró en DOM');
+		}else{
+			
+			if(_FiltroVisibles.busqueda_act=='si'){
+				if(Object.keys(_FiltroVisibles.busqueda).length>0){
 					
+					//alert(_idcom);
+					//console.log(_FiltroVisibles.busqueda[_idcom]);				
+					if(_FiltroVisibles.busqueda[_idcom]!=undefined){	
+						//alert(_idcom);
+						//_FiltroVisibles.busqueda[_idcom]					
+						_fila.setAttribute('filtroB',"siver");
+					}else{
+						_fila.setAttribute('filtroB',"nover");
+						
+					}
 				}
-			}
-		}else if(_FiltroVisibles.busqueda_light_act=='si'){
-			
-			_st =_ComunicacionesCargadas[_idcom].falsonombre;
-			_st+='-'+_ComunicacionesCargadas[_idcom].fechaobjetivo;
-			_st+='-'+_ComunicacionesCargadas[_idcom].id1;
-			_st+='-'+_ComunicacionesCargadas[_idcom].id2;
-			_st+='-'+_ComunicacionesCargadas[_idcom].id3;
-			_st+='-'+_ComunicacionesCargadas[_idcom].nombre;
-			_st+='-'+_ComunicacionesCargadas[_idcom].recepcion;
-			_st+='-'+_ComunicacionesCargadas[_idcom].resumen;
-			
-			
-			_st=_st.normalize('NFD').replace(/[\u0300-\u036f]/g, "");
-			_st=_st.replace('/[^A-Za-z0-9\-]/gi', '');
-			_st=_st.replace(/ /g, '');
-			_st=_st.toLowerCase();
-			
-			
-			if(_st.indexOf(_FiltroVisibles.busqueda_light_hatch)>=0){
-				_fila.setAttribute('filtroB','siver');
-				console.log(_FiltroVisibles.busqueda_light_hatch+' vs '+_st+' -- '+_st.indexOf(_FiltroVisibles.busqueda_light_hatch));
+			}else if(_FiltroVisibles.busqueda_light_act=='si'){
+				
+				_st =_ComunicacionesCargadas[_idcom].falsonombre;
+				_st+='-'+_ComunicacionesCargadas[_idcom].fechaobjetivo;
+				_st+='-'+_ComunicacionesCargadas[_idcom].id1;
+				_st+='-'+_ComunicacionesCargadas[_idcom].id2;
+				_st+='-'+_ComunicacionesCargadas[_idcom].id3;
+				_st+='-'+_ComunicacionesCargadas[_idcom].nombre;
+				_st+='-'+_ComunicacionesCargadas[_idcom].recepcion;
+				_st+='-'+_ComunicacionesCargadas[_idcom].resumen;
+				
+				
+				_st=_st.normalize('NFD').replace(/[\u0300-\u036f]/g, "");
+				_st=_st.replace('/[^A-Za-z0-9\-]/gi', '');
+				_st=_st.replace(/ /g, '');
+				_st=_st.toLowerCase();
+				
+				
+				if(_st.indexOf(_FiltroVisibles.busqueda_light_hatch)>=0){
+					_fila.setAttribute('filtroB','siver');
+					console.log(_FiltroVisibles.busqueda_light_hatch+' vs '+_st+' -- '+_st.indexOf(_FiltroVisibles.busqueda_light_hatch));
+				}else{
+					_fila.setAttribute('filtroB','nover');
+					//console.log('nover');
+				}
 			}else{
-				_fila.setAttribute('filtroB','nover');
-				//console.log('nover');
+				_fila.setAttribute('filtroB',"siver");
 			}
-		}else{
-			_fila.setAttribute('filtroB',"siver");
-		}
-		
-		if(_filtro.sentido=='todas'){
-			_fila.setAttribute('filtroS',"siver");
-		}else if(_filtro.sentido==_ComunicacionesCargadas[_idcom].sentido){
-			_fila.setAttribute('filtroS',"siver");
-		}else{
-			_fila.setAttribute('filtroS',"nover");
-		}
-		
-		if(_filtro.abiertas=='todas'){
-			_fila.setAttribute('filtroA',"siver");
-		}else if(_ComunicacionesCargadas[_idcom].cerrado!='si'){
-			_fila.setAttribute('filtroA',"siver");
-		}else{
-			_fila.setAttribute('filtroA',"nover");
-		}
-		
-		if(_filtro.grupoa=='todas'){
-			_fila.setAttribute('filtroGA',"siver");
-		}else if(_filtro.grupoa==_ComunicacionesCargadas[_idcom].idga){
-			_fila.setAttribute('filtroGA',"siver");
-		}else{
-			_fila.setAttribute('filtroGA',"nover");
-		}
-		
-		if(_filtro.grupob=='todas'){
-			_fila.setAttribute('filtroGB',"siver");
-		}else if(_filtro.grupob==_ComunicacionesCargadas[_idcom].idgb){
-			_fila.setAttribute('filtroGB',"siver");
-		}else{
-			_fila.setAttribute('filtroGB',"nover");
+			
+			if(_filtro.sentido=='todas'){
+				_fila.setAttribute('filtroS',"siver");
+			}else if(_filtro.sentido==_ComunicacionesCargadas[_idcom].sentido){
+				_fila.setAttribute('filtroS',"siver");
+			}else{
+				_fila.setAttribute('filtroS',"nover");
+			}
+			
+			if(_filtro.abiertas=='todas'){
+				_fila.setAttribute('filtroA',"siver");
+			}else if(_ComunicacionesCargadas[_idcom].cerrado!='si'){
+				_fila.setAttribute('filtroA',"siver");
+			}else{
+				_fila.setAttribute('filtroA',"nover");
+			}
+			
+			if(_filtro.grupoa=='todas'){
+				_fila.setAttribute('filtroGA',"siver");
+			}else if(_filtro.grupoa==_ComunicacionesCargadas[_idcom].idga){
+				_fila.setAttribute('filtroGA',"siver");
+			}else{
+				_fila.setAttribute('filtroGA',"nover");
+			}
+			
+			if(_filtro.grupob=='todas'){
+				_fila.setAttribute('filtroGB',"siver");
+			}else if(_filtro.grupob==_ComunicacionesCargadas[_idcom].idgb){
+				_fila.setAttribute('filtroGB',"siver");
+			}else{
+				_fila.setAttribute('filtroGB',"nover");
+			}
 		}
 					
 	}
@@ -465,6 +468,7 @@ function controOpcionBlur(_this){
 	if(_this.value==""){
 		
 		_v=document.querySelector('#editorArchivos > input[name="idg'+_t+'"]').value;
+		
 		_vn=document.querySelector('#editorArchivos > input[name="idg'+_t+'-n"]').value;
 		
 		if(_v!==''){
@@ -475,7 +479,10 @@ function controOpcionBlur(_this){
 			_v=_inid.getAttribute('valarchivo');
 			_inid.value=_v;
 			_inid.setAttribute('origen','archivo');
-			_this.value=_Grupos.grupos[_v].nombre;
+			console.log(_v);
+			if(_Grupos.grupos[_v]!=undefined){
+				_this.value=_Grupos.grupos[_v].nombre;
+			}
 		}
 	//_this.value="-";	AHORA USAMOSPLACEHOLDER
 	}

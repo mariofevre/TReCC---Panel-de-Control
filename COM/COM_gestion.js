@@ -28,6 +28,7 @@ function anadirAdjunto(_adat){
         _h3=document.createElement('h3');
         _h3.setAttribute('idadj',_adat.id);
         
+        
         _aaa=document.createElement('a');
         _aaa.innerHTML=_adat.FI_nombreorig;
         _aaa.setAttribute('href',_adat.FI_documento);
@@ -35,6 +36,33 @@ function anadirAdjunto(_adat){
         _aaa.setAttribute('download',_adat.FI_nombreorig);
         _h3.appendChild(_aaa);
 
+		_sel=document.createElement('select');
+		_sel.setAttribute('name','adj_'+_adat.id+'_tipo');
+        _sel.setAttribute('onclick','cambiaTipoAdjunto(this)');
+        _h3.appendChild(_sel);
+        
+        _op=document.createElement('option');
+        _op.value='origen';
+        _op.innerHTML='origen';
+        _sel.appendChild(_op);
+        
+        _op=document.createElement('option');
+        _op.value='adjunto';
+        _op.innerHTML='adjunto';
+        _sel.appendChild(_op);
+        
+        _op=document.createElement('option');
+        _op.value='contenido';
+        _op.innerHTML='contenido';
+        _sel.appendChild(_op);
+        
+        _op=document.createElement('option');
+        _op.value='imagenembebida';
+        _op.innerHTML='imagenembebida';
+        _sel.appendChild(_op);
+        
+        _sel.value=_adat.tipo;
+        
         _in=document.createElement('input');
         _in.value=_adat.descripcion;
         _in.setAttribute('type','text');
@@ -80,7 +108,7 @@ function anadirAdjunto(_adat){
     
     function resaltar(_this){
         _regid = _this.parentNode.getAttribute('regid');
-        console.log('fnc'+_regid);
+        //console.log('fnc'+_regid);
         if(document.getElementById('fnc'+_regid)==null){return;}
         document.getElementById('fnc'+_regid).style.backgroundColor='lightblue';
     }
@@ -132,10 +160,11 @@ function anadirAdjunto(_adat){
         if(_destino.getAttribute('title')==''){				
             var parametros = {
                     "id" : _idcomunicacion,
-                    "campo" : 'descripcion'
+                    "campo" : 'descripcion',
+                    "panid" : _PanelI
             };
 
-            //Llamamos a los puntos de la actividad
+            
             $.ajax({
                 data:  parametros,
                 url:   './COM/COM_consulta_comunicacion_campo.php',
@@ -175,10 +204,11 @@ function anadirAdjunto(_adat){
         var _destino=_destino;
         var parametros = {
                 "id" : _idcomunicacion,
-                "campo" : 'descripcion'
+                "campo" : 'descripcion',
+                "panid" : _PanelI
         };
         console.log(parametros);
-        //Llamamos a los puntos de la actividad
+        
         
         $.ajax({
             data:  parametros,
@@ -242,30 +272,54 @@ function anadirAdjunto(_adat){
         }
         
         
-        var parametros = {
+        var _parametros = {
             "accion" : 'desvincular',
             "tabla" : 'comunicacioneslinkrespuestas',
             "origen" : _orig,
             "destino" : _dest,
-            "campo" : 'descripcion'
+            "campo" : 'descripcion',
+            "cerrar_origen": 'no',
+            "cerrar_origen_fecha": '',
+            "reabrir_origen":'no',
+            "panid" : _PanelI
         };
 
-        //Llamamos a los puntos de la actividad
+
+		if(_ComunicacionesCargadas[_orig] == undefined){
+			
+			alert('error al buscar la comunicación a vincular. Vuelva a intentarlo');
+			
+		}
+		
+		
+		if(_ComunicacionesCargadas[_orig].cerrado=='si'){
+			
+			if(confirm('La comunicación de origen ('+_ComunicacionesCargadas[_orig].etiqueta+') se encuentra cerrada. ¿Deséa reabrila (eliminando su fecha de cierre)?')){
+				_parametros["reabrir_origen"]='si';
+			}else{				
+				_parametros["reabrir_origen"]='no';		
+			}
+		
+		}
+	
+
         $.ajax({
-            data:  parametros,
+            data:  _parametros,
             url:   './COM/COM_ed_vincula_respuestas.php',
             type:  'post',
             success:  function (response) {
                 _res = PreprocesarRespuesta(response);      
+                if(_res.res!='exito'){alert('Error, no se recibió la respueta esperada del servidor.');return;}
                 _this.parentNode.parentNode.removeChild(_this.parentNode);
+                actualizarUnaFila(_res.data.origen);
             }
         });
     }
     
     
 	function cargarListadito(){
-    	var _parametros = {};
-        //Llamamos a los puntos de la actividad
+    	var _parametros = {"panid" : _PanelI};
+        
         $.ajax({
             data:  _parametros,
             url:   './COM/COM_consulta_listadito.php',
@@ -420,7 +474,7 @@ function anadirAdjunto(_adat){
         
         document.getElementById('origen').value=_id;
         document.getElementById('destino').value='';
-        document.getElementById('comandoAborde').removeAttribute('style');
+        document.querySelector('#comandoAborde').setAttribute('estado','activo');
         document.getElementById('seleorig').style.display='none';
         document.getElementById('selerta').style.display='inline';
         document.getElementById('origennombre').innerHTML=_falsonombre;
@@ -481,10 +535,12 @@ function anadirAdjunto(_adat){
         _idAcc=_id;
         _idAccEmi=_emision;			
         
+        
         document.getElementById('origen').value='';
         document.getElementById('destino').value=_id;
         
-        document.getElementById('comandoAborde').removeAttribute('style');
+        
+        document.querySelector('#comandoAborde').setAttribute('estado','activo');
         document.getElementById('seleorig').style.display='inline';
         document.getElementById('selerta').style.display='none';
         document.getElementById('origennombre').innerHTML=_falsonombre;
@@ -507,23 +563,64 @@ function crearLink(_this){
         _dest = _this.getAttribute('regid');
         _orig = _idAcc;				
     }
-        
-    var parametros = {
+    
+    
+    var _parametros = {
         "accion" : 'vincular',
         "tabla" : 'comunicacioneslinkrespuestas',
         "campo" : 'descripcion',
         "origen" : _orig,
         "destino" : _dest,
-    };
+        "cerrar_origen" : 'no',
+        "cerrar_origen_fecha" : '',
+        "reabrir_origen":'no',
+        "panid" : _PanelI
+    };  
+    
+    
+    if(_ComunicacionesCargadas[_orig] == undefined){
+		alert('error al buscar lacomunicación a vincular. Vuelva a intentarlo');
+	}
+	
+	
+	if(_ComunicacionesCargadas[_orig].cerrado=='no'){
+		
+		if(_ComunicacionesCargadas[_dest].emision==''){
+			if(confirm('La comunicación de origen ('+_ComunicacionesCargadas[_orig].etiqueta+') se encuentra abierta. ¿Deséa cerrarla (sin fecha de cierre definida)?')){
+				_parametros["cerrar_origen"]='si';
+				_parametros["cerrar_origen_fecha"]='';	
+			}else{				
+				_parametros["cerrar_origen"]='no';
+				_parametros["cerrar_origen_fecha"]='';				
+			}
+			
+		}else{
+		
+			_f=_ComunicacionesCargadas[_dest].emision.split('-');
+			
+			if(confirm('La comunicación de origen ('+_ComunicacionesCargadas[_orig].etiqueta+') se encuentra abierta. ¿Deséa cerrarla con fecha '+_f[2]+'/'+_f[1]+'/'+_f[0]+'?')){
+				_parametros["cerrar_origen"]='si';
+				_parametros["cerrar_origen_fecha"]=_ComunicacionesCargadas[_dest].emision;
+			}else{
+				_parametros["cerrar_origen"]='no';
+				_parametros["cerrar_origen_fecha"]='';
+			}
+		}
+	}
+	
 
-    //Llamamos a los puntos de la actividad
+    
     $.ajax({
-            data:  parametros,
+            data:  _parametros,
             url:   './COM/COM_ed_vincula_respuestas.php',
             type:  'post',
             success:  function (response) {
                 _res = PreprocesarRespuesta(response);      
                
+               if(_res.res!='exito'){alert('Error, no se recibió la respueta esperada del servidor.');return;}
+               
+                actualizarUnaFila(_res.data.origen);
+                
                 representarLink(response, _this);
                 
             }
@@ -531,8 +628,6 @@ function crearLink(_this){
 }	
 
 function representarLink(response,_this){
-    
-    console.log(_this);
     
     _destino=document
     var _res = $.parseJSON(response);
@@ -772,7 +867,8 @@ function consultarInterpretacionNombre(
     	'nombrearchivo':_nombrearchivo,
     	'nf':_nf,
     	'modo':_modo,
-    	'modocod':_modocod
+    	'modocod':_modocod,
+    	"panid" : _PanelI
     };            
     
     $.ajax({
@@ -795,9 +891,9 @@ function consultarInterpretacionNombre(
             		'sentido',
             		'emision',
             		'id_p_grupos_id_nombre_tipoa',
-            		'id_p_grupos_id_nombre_tipoa_n',
+            		'id_p_grupos_id_nombre_tipoa-n',
             		'id_p_grupos_id_nombre_tipob',
-            		'id_p_grupos_id_nombre_tipob_n'
+            		'id_p_grupos_id_nombre_tipob-n'
             );
             
             
@@ -805,24 +901,29 @@ function consultarInterpretacionNombre(
                       console.log(_var[_i]);  
 	            if(_res.data.definiciones[_var[_i]]!=undefined){
 	            	console.log(_var[_i]+' -> '+_res.data.definiciones[_var[_i]]);
-	            	
 	            	_in=_pp.querySelector('[name="'+_var[_i]+'"]');
-	            	
 	            	if(_in==null){
 	            		console.log('input no encontrado');
-	            		continue;}
+	            		continue;
+	            	}
 	            	console.log(_in);	
 	            	_in.value=_res.data.definiciones[_var[_i]];
-	            }		else{
-	            	console.log('sin definicion');
+	            }else{
+	            	//console.log('sin definicion');
 	            }            
 	            if(_res.data.observaciones[_var[_i]]!=undefined){
             		_in.title=_res.data.observaciones[_var[_i]];
             		_in.setAttribute('observado','si');
-            		console.log('sin observación');
+            		//console.log('sin observación');
             	}
         	}
         	
+        	/*
+        	console.log(_pp);
+        	console.log(_pp.querySelector('[name="id_p_grupos_id_nombre_tipoa-n"]'));
+        	controOpcionBlur(_pp.querySelector('[name="id_p_grupos_id_nombre_tipoa-n"]'));
+        	controOpcionBlur(_pp.querySelector('[name="id_p_grupos_id_nombre_tipob-n"]'));
+        	*/
         	
         	_inid=_pp.querySelector('#Iid_p_grupos_id_nombre_tipoa');
         	_inn=_pp.querySelector('#Iid_p_grupos_id_nombre_tipoa-n');
@@ -878,10 +979,14 @@ function subirDocCandidato(_candidato,_modo){
     var _parametros = new FormData();
     _parametros.append("upload",_file);
     _parametros.append("nf",_nf);
-    _parametros.append("panid",_PanId);
+    _parametros.append("panid",_PanelI);
     _parametros.append("modo",_modo);
     _parametros.append("tipo",_form.querySelector('select[name="tipo"').value);
     
+    id_p_grupos_id_nombre_tipoa
+    id_p_grupos_id_nombre_tipoa
+    console.log(_candidato);
+    console.log(_candidato.querySelector('input[name="id_p_grupos_id_nombre_tipoa"'));
     _parametros.append("id_p_grupos_id_nombre_tipoa",_candidato.querySelector('input[name="id_p_grupos_id_nombre_tipoa"').value);
     _parametros.append("id_p_grupos_id_nombre_tipoa-n",_candidato.querySelector('input[name="id_p_grupos_id_nombre_tipoa-n"').value);
     _parametros.append("id_p_grupos_id_nombre_tipob",_candidato.querySelector('input[name="id_p_grupos_id_nombre_tipob"').value);
